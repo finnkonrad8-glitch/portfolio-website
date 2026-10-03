@@ -1,0 +1,25 @@
+{
+  "default": {
+    "openGraph": {}
+  },
+  "/": {
+    "title": "Iyodo Oluwatosin (Tolex) | Full-Stack & Automation Expert",
+    "description": "Tolex builds Excel and Google Sheets tools with VBA and Apps Script, websites, apps, and email automations that help small businesses run smoother.",
+    "openGraph": {}
+  },
+  "/about": {
+    "title": "About Tolex | VBA, Apps Script, Canva & Web Skills",
+    "description": "Meet Iyodo Oluwatosin (Tolex): full-stack developer, automation specialist, spreadsheet expert, and UI/UX designer. Skills, background, and résumé.",
+    "openGraph": {}
+  },
+  "/projects": {
+    "title": "Projects by Tolex | Spreadsheets, Web Apps & Automation",
+    "description": "Selected projects by Tolex: spreadsheet systems, websites, email automations, and accessible designs that turn manual work into working systems.",
+    "openGraph": {}
+  },
+  "/contact": {
+    "title": "Contact Tolex | Start Your Spreadsheet or Web Project",
+    "description": "Tell Tolex about the manual process slowing your business down. Send a message or hire Tolex on Fiverr for spreadsheet, web, and automation work.",
+    "openGraph": {}
+  }
+}

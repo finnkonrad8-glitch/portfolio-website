@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Placeholder artwork for Project Two">
+  <rect width="1600" height="1000" fill="#0B0A09"/>
+  <g stroke="#FAF8F5" stroke-opacity="0.045" stroke-width="1"><path d="M0 0V1000" /><path d="M80 0V1000" /><path d="M160 0V1000" /><path d="M240 0V1000" /><path d="M320 0V1000" /><path d="M400 0V1000" /><path d="M480 0V1000" /><path d="M560 0V1000" /><path d="M640 0V1000" /><path d="M720 0V1000" /><path d="M800 0V1000" /><path d="M880 0V1000" /><path d="M960 0V1000" /><path d="M1040 0V1000" /><path d="M1120 0V1000" /><path d="M1200 0V1000" /><path d="M1280 0V1000" /><path d="M1360 0V1000" /><path d="M1440 0V1000" /><path d="M1520 0V1000" /><path d="M1600 0V1000" /><path d="M0 0H1600" /><path d="M0 80H1600" /><path d="M0 160H1600" /><path d="M0 240H1600" /><path d="M0 320H1600" /><path d="M0 400H1600" /><path d="M0 480H1600" /><path d="M0 560H1600" /><path d="M0 640H1600" /><path d="M0 720H1600" /><path d="M0 800H1600" /><path d="M0 880H1600" /><path d="M0 960H1600" /></g>
+  <rect x="120" y="170" width="760" height="560" rx="28" fill="#131211" stroke="#2B2827" stroke-width="2"/>
+  <circle cx="165" cy="215" r="9" fill="#3C3A39"/><circle cx="195" cy="215" r="9" fill="#3C3A39"/><circle cx="225" cy="215" r="9" fill="#3EE092"/>
+  <rect x="170" y="290" width="420" height="34" rx="10" fill="#FAF8F5" fill-opacity="0.85"/>
+  <rect x="170" y="350" width="560" height="14" rx="7" fill="#FAF8F5" fill-opacity="0.14"/>
+  <rect x="170" y="380" width="500" height="14" rx="7" fill="#FAF8F5" fill-opacity="0.1"/>
+  <rect x="170" y="440" width="190" height="52" rx="26" fill="#3EE092"/>
+  <rect x="380" y="440" width="170" height="52" rx="26" fill="none" stroke="#FAF8F5" stroke-opacity="0.3" stroke-width="2"/>
+  <g fill="#FAF8F5" fill-opacity="0.05"><rect x="170" y="540" width="200" height="140" rx="14"/><rect x="390" y="540" width="200" height="140" rx="14"/><rect x="610" y="540" width="220" height="140" rx="14"/></g>
+  <circle cx="1220" cy="450" r="280" fill="#3EE092" fill-opacity="0.07"/>
+  <g transform="translate(1080 310) scale(1.4)" fill="#FAF8F5"><path d="M24.87 34A100 100 0 0 1 175.13 34Z"/><path d="M2.23 79H78V197.55A100 100 0 0 1 2.23 79Z"/><path d="M122 79H197.77A100 100 0 0 1 122 197.55Z"/></g>
+  <text x="120" y="900" fill="#A9A39E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30" letter-spacing="4">02 / PROJECT TWO · IMAGE COMING SOON</text>
+</svg>
