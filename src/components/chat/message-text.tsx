@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { Fragment, type ReactNode } from 'react'
 import { site } from '@/data/site'
 
 // A tiny, safe renderer for the assistant's replies: paragraphs, bullet and
@@ -133,7 +133,16 @@ export function MessageText({
         .filter((block) => block.lines.length > 0)
         .map((block, i) => {
           if (block.type === 'p') {
-            return <p key={i}>{inline(block.lines.join(' '), onNavigate)}</p>
+            return (
+              <p key={i}>
+                {block.lines.map((line, j) => (
+                  <Fragment key={j}>
+                    {j > 0 ? <br /> : null}
+                    {inline(line, onNavigate)}
+                  </Fragment>
+                ))}
+              </p>
+            )
           }
           const List = block.type
           return (
