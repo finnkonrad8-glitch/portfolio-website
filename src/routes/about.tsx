@@ -212,13 +212,22 @@ function ProfileCard() {
       className="fade-up relative self-start overflow-hidden rounded-3xl border border-border bg-card p-7 sm:p-8"
       style={delay(120)}
     >
-      <div className="relative mx-auto flex aspect-square w-full max-w-60 items-center justify-center">
-        <div className="orbit absolute inset-0 rounded-full border border-dashed border-foreground/15" />
-        <div className="absolute inset-[12%] rounded-full bg-gradient-to-b from-accent/15 to-transparent" />
-        <LogoMark className="relative w-[58%] text-foreground" />
+      <div className="relative">
+        <div className="overflow-hidden rounded-2xl border border-border bg-secondary">
+          <img
+            src="/tolex-portrait.webp"
+            alt="Portrait of Iyodo Oluwatosin (Tolex)"
+            width={880}
+            height={1100}
+            className="aspect-[4/5] w-full object-cover object-[50%_20%]"
+          />
+        </div>
+        <span className="absolute -bottom-5 left-1/2 flex size-12 -translate-x-1/2 items-center justify-center rounded-full border-4 border-card bg-foreground text-background">
+          <LogoMark className="size-6" />
+        </span>
       </div>
 
-      <div className="mt-8 text-center">
+      <div className="mt-9 text-center">
         <p className="font-display text-2xl font-bold tracking-tight">
           {site.name}
         </p>

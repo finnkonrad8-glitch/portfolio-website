@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { LogoMark } from '@/components/brand/logo-mark'
 import { buttonVariants } from '@/components/shared/button'
+import { HeroRotator } from '@/components/home/hero-rotator'
 import { Eyebrow } from '@/components/shared/section-heading'
 import { site } from '@/data/site'
 import { delay } from '@/lib/motion'
@@ -27,30 +28,9 @@ export function Hero() {
             </Eyebrow>
           </div>
 
-          <h1
-            id="hero-title"
-            className="fade-up mt-6 font-display text-[2.85rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-7xl"
-            style={delay(80)}
-          >
-            I build the systems small businesses{' '}
-            <span className="relative whitespace-nowrap text-accent">
-              run on.
-              <svg
-                aria-hidden
-                viewBox="0 0 200 12"
-                preserveAspectRatio="none"
-                className="absolute -bottom-2 left-0 h-2.5 w-full text-accent/50"
-              >
-                <path
-                  d="M2 9C50 3 150 3 198 9"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
-          </h1>
+          <div className="fade-up mt-6" style={delay(80)}>
+            <HeroRotator headingId="hero-title" />
+          </div>
 
           <p
             className="fade-up mt-7 font-mono text-xs leading-relaxed tracking-wide text-foreground/80 sm:text-sm"
@@ -63,10 +43,9 @@ export function Hero() {
             className="fade-up mt-5 max-w-xl text-lg leading-relaxed text-pretty text-muted-foreground"
             style={delay(220)}
           >
-            Excel and Google Sheets tools powered by VBA and Apps Script,
-            websites and apps, and email automations that handle the follow-up
-            for you. I take the messy, manual parts of your business and turn
-            them into something that just works.
+            I build the systems small businesses run on. I take the messy,
+            manual parts of your business and turn them into something that just
+            works.
           </p>
 
           <div
@@ -148,10 +127,21 @@ function HeroVisual() {
       <div className="orbit-reverse absolute inset-[11%] rounded-full border border-foreground/10">
         <span className="absolute -top-1 left-1/2 size-2 rounded-full bg-foreground/70" />
       </div>
-      <div className="absolute inset-[22%] rounded-full bg-gradient-to-b from-foreground/[0.06] to-transparent" />
 
       {/* The mark */}
-      <LogoMark className="absolute inset-[26%] text-foreground drop-shadow-[0_20px_40px_hsl(var(--background))]" />
+      <div className="absolute inset-[19%] overflow-hidden rounded-full border-4 border-background shadow-[0_30px_80px_-30px_hsl(var(--accent)/0.55)] ring-1 ring-border">
+        <img
+          src="/tolex-portrait.webp"
+          alt=""
+          width={880}
+          height={1100}
+          fetchPriority="high"
+          className="size-full object-cover object-[50%_18%]"
+        />
+      </div>
+      <span className="absolute right-[20%] bottom-[19%] flex size-14 items-center justify-center rounded-full border-4 border-background bg-foreground text-background shadow-lg sm:size-16">
+        <LogoMark className="size-7 sm:size-8" />
+      </span>
 
       {/* Skill chips */}
       {chips.map((chip) => (

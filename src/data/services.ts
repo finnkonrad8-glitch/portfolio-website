@@ -2,74 +2,73 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Accessibility,
   AppWindow,
+  Braces,
   FileSpreadsheet,
   MailCheck,
   Palette,
+  Smartphone,
   Waypoints,
+  Workflow,
 } from 'lucide-react'
+import { serviceList, type ServiceId } from './catalog'
 
-export type Service = {
-  title: string
-  description: string
-  icon: LucideIcon
+export { process } from './catalog'
+
+export type Service = (typeof serviceList)[number] & { icon: LucideIcon }
+
+const serviceIcons: Record<ServiceId, LucideIcon> = {
+  spreadsheets: FileSpreadsheet,
+  automation: Workflow,
+  apps: Smartphone,
+  websites: AppWindow,
+  email: MailCheck,
+  design: Palette,
+  accessibility: Accessibility,
+  obsidian: Waypoints,
 }
 
-export const services: Service[] = [
+export const services: Service[] = serviceList.map((service) => ({
+  ...service,
+  icon: serviceIcons[service.id],
+}))
+
+export type HeroPhrase = { text: string; tag: string; icon: LucideIcon }
+
+/** Rotating hero headline: "I build …" */
+export const heroPhrases: HeroPhrase[] = [
   {
-    title: 'Spreadsheet Systems',
-    description:
-      'Excel and Google Sheets tools powered by VBA and Apps Script that take repetitive, manual work off your plate.',
+    text: 'Excel dashboards that update themselves.',
+    tag: 'VBA · Excel',
     icon: FileSpreadsheet,
   },
   {
-    title: 'Websites & Apps',
-    description:
-      'Responsive websites and web apps built end to end, from the interface your customers see to the data behind it.',
-    icon: AppWindow,
+    text: 'Google Sheets that talk to your apps.',
+    tag: 'Apps Script · APIs',
+    icon: Braces,
   },
   {
-    title: 'Email Automations',
-    description:
-      'Automated email flows that handle the follow-up for you, so leads and clients never slip through the cracks.',
+    text: 'follow-up emails that send themselves.',
+    tag: 'Email automation',
     icon: MailCheck,
   },
   {
-    title: 'Brand Kits, Ebooks & Workbooks',
-    description:
-      'Polished brand kits, ebooks, and workbooks designed in Canva, ready to publish and easy for you to update.',
+    text: 'apps that replace messy spreadsheets.',
+    tag: 'App development',
+    icon: Smartphone,
+  },
+  {
+    text: 'websites that everyone can use.',
+    tag: 'Web · WCAG 2.1 AA',
+    icon: AppWindow,
+  },
+  {
+    text: 'brand kits, ebooks, and workbooks.',
+    tag: 'Canva design',
     icon: Palette,
   },
   {
-    title: 'Accessibility (WCAG & ADA)',
-    description:
-      'Audits and fixes that bring websites up to WCAG and ADA accessibility standards, so everyone can use them.',
-    icon: Accessibility,
-  },
-  {
-    title: 'Obsidian Knowledge Systems',
-    description:
-      "Obsidian vaults that turn scattered notes into a connected knowledge system you'll actually use.",
+    text: 'notes that become a second brain.',
+    tag: 'Obsidian',
     icon: Waypoints,
-  },
-]
-
-export const process = [
-  {
-    step: '01',
-    title: 'Map the mess',
-    description:
-      'We walk through how the process runs today and pinpoint where time, money, and attention leak away.',
-  },
-  {
-    step: '02',
-    title: 'Build the system',
-    description:
-      'I design and build the spreadsheet, automation, or site around the way you and your team actually work.',
-  },
-  {
-    step: '03',
-    title: 'Hand it over',
-    description:
-      'You get a working system, explained in plain language and ready for everyday use. It just works.',
   },
 ]

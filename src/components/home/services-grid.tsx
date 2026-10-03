@@ -15,11 +15,11 @@ export function ServicesGrid() {
               Tools that take the manual work off your plate.
             </span>
           }
-          description="Six ways I help small businesses run smoother, from the spreadsheet you open every morning to the website your customers find first."
+          description="Eight ways I help small businesses run smoother, from the spreadsheet you open every morning to the website your customers find first."
         />
       </div>
 
-      <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service, index) => {
           const Icon = service.icon
           return (

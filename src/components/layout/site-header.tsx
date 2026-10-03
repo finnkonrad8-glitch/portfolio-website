@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from '@tanstack/react-router'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 import { Logo } from '@/components/brand/logo'
+import { ThemeToggle } from '@/components/theme/theme-toggle'
 import { buttonVariants } from '@/components/shared/button'
 import { navLinks, site } from '@/data/site'
 import { delay } from '@/lib/motion'
@@ -60,13 +61,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle className="hidden md:inline-flex" />
           <a
             href={site.fiverr.url}
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: 'primary', size: 'sm' }),
-              'hidden sm:inline-flex',
+              'hidden lg:inline-flex',
             )}
           >
             Hire me on Fiverr
@@ -110,6 +112,10 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <div className="mt-5 flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">Theme</span>
+            <ThemeToggle />
+          </div>
           <a
             href={site.fiverr.url}
             target="_blank"

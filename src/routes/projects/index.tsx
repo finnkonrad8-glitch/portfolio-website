@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { PageShell } from '@/components/layout/page-shell'
+import { MoreWork } from '@/components/projects/more-work'
 import { ProjectCard } from '@/components/projects/project-card'
 import { CtaBand } from '@/components/shared/cta-band'
 import { SectionHeading } from '@/components/shared/section-heading'
@@ -46,6 +47,8 @@ function ProjectsPage() {
           ))}
         </ul>
       </section>
+
+      <MoreWork />
 
       <CtaBand
         title="Need something similar built?"

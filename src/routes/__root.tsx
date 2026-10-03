@@ -18,6 +18,7 @@ import { MacalyBridge } from '@macaly/bridge'
 import '../styles.css'
 import AppConvexProvider from '@/components/convex-client-provider'
 import { compactMeta, defaultSocialImage, metadata } from '@/lib/seo'
+import { themeInitScript } from '@/lib/theme'
 
 const rootMeta = metadata['/']
 
@@ -31,7 +32,8 @@ export const Route = createRootRoute({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: rootMeta.title },
       { name: 'description', content: rootMeta.description },
-      { name: 'theme-color', content: '#0b0a09' },
+      // Kept in sync with the active theme by themeInitScript / applyTheme.
+      { name: 'theme-color', content: '#faf8f5' },
       { property: 'og:site_name', content: 'TolexTech' },
       { property: 'og:type', content: 'website' },
       { property: 'og:image', content: defaultSocialImage() },
@@ -42,9 +44,15 @@ export const Route = createRootRoute({
       { rel: 'apple-touch-icon', href: '/logo192.png' },
       { rel: 'manifest', href: '/manifest.json' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossOrigin: 'anonymous',
+      },
       { rel: 'stylesheet', href: FONTS_URL },
     ],
+    // Applies a saved light/dark choice before first paint (no theme flash).
+    scripts: [{ children: themeInitScript }],
   }),
   shellComponent: RootDocument,
 })

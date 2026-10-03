@@ -18,4 +18,13 @@ export default defineSchema({
       v.literal("failed"),
     ),
   }),
+
+  // Rate-limit counters for the chat assistant, one row per time window.
+  chatUsage: defineTable({
+    window: v.string(),
+    count: v.number(),
+    expiresAt: v.number(),
+  })
+    .index("by_window", ["window"])
+    .index("by_expiry", ["expiresAt"]),
 })

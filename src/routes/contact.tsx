@@ -36,7 +36,23 @@ function ContactPage() {
               description="Send a message and it lands straight in my inbox. Prefer to keep things on a marketplace? You can hire me on Fiverr too."
             />
 
-            <div className="mt-10 space-y-4">
+            <div className="mt-8 flex items-center gap-4 rounded-2xl border border-border bg-card p-4">
+              <img
+                src="/tolex-avatar.webp"
+                alt=""
+                width={320}
+                height={320}
+                className="size-14 shrink-0 rounded-full object-cover ring-2 ring-accent/40"
+              />
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                <span className="block font-medium text-foreground">
+                  You'll hear back from me, not a team.
+                </span>
+                {site.name} ({site.nickname}), {site.brand}
+              </p>
+            </div>
+
+            <div className="mt-4 space-y-4">
               <a
                 href={site.fiverr.url}
                 target="_blank"

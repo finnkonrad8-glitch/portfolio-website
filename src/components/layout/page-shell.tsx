@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { ChatWidget } from '@/components/chat/chat-widget'
 import { SiteFooter } from './site-footer'
 import { SiteHeader } from './site-header'
 
@@ -18,6 +19,7 @@ export function PageShell({ children }: { children: ReactNode }) {
         {children}
       </main>
       <SiteFooter />
+      <ChatWidget />
     </div>
   )
 }

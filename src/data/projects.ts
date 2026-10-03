@@ -140,8 +140,8 @@ export const projects: Project[] = [
       { value: '4.7★', label: 'review, plus a tip' },
     ],
     quote: {
-      text: 'Excellent to work with… I would do it again (and will)!',
-      attribution: 'Client review, earned on a previous Fiverr account',
+      text: "Petra is excellent to work with. She communicates well and responds to her client's needs well. A pleasure working with her. I would do it again (and will)!",
+      attribution: 'Terry, Fiverr review (earned on a previous account)',
     },
     category: 'Desktop App (Excel VBA)',
     tags: [

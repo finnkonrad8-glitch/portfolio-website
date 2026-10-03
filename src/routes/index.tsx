@@ -6,6 +6,7 @@ import { ServicesGrid } from '@/components/home/services-grid'
 import { SkillsMarquee } from '@/components/home/skills-marquee'
 import { StatsBand } from '@/components/home/stats-band'
 import { PageShell } from '@/components/layout/page-shell'
+import { ReviewsSection } from '@/components/reviews/reviews-section'
 import { CtaBand } from '@/components/shared/cta-band'
 import { site } from '@/data/site'
 import { pageHead } from '@/lib/seo'
@@ -55,6 +56,7 @@ function HomePage() {
       <ServicesGrid />
       <ProcessSteps />
       <FeaturedProjects />
+      <ReviewsSection />
       <CtaBand />
     </PageShell>
   )

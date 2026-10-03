@@ -7,6 +7,8 @@ import {
   Waypoints,
 } from 'lucide-react'
 
+export { industries, toolkit, workingStyle } from './catalog'
+
 export type Skill = {
   name: string
   description: string
@@ -52,26 +54,6 @@ export const coreSkills: Skill[] = [
   },
 ]
 
-export const toolkit = [
-  'Microsoft Excel',
-  'Google Sheets',
-  'Samsara & Motive APIs',
-  'Google Maps API',
-  'WhatsApp',
-  'n8n',
-  'Zapier',
-  'Make',
-  'HubSpot',
-  'Smartlead',
-  'Instantly',
-  'Systeme.io',
-  'Apollo',
-  'Clay',
-  'Fillable PDFs',
-  'ADA & AODA',
-  'Python (openpyxl)',
-]
-
 export const roleDetails = [
   {
     role: 'Full-Stack Developer',
@@ -93,18 +75,4 @@ export const roleDetails = [
     description:
       'Clean, accessible interfaces plus brand assets designed in Canva.',
   },
-]
-
-export const workingStyle = [
-  'Written-first: every scope, change, and handover on record',
-  'A clear guide ships with every build',
-  'Tested end to end before delivery',
-]
-
-export const industries = [
-  'Trucking and logistics',
-  'Nonprofits and churches',
-  'Community associations',
-  'Wedding and lifestyle brands',
-  'IT consulting',
 ]

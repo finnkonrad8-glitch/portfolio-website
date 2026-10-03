@@ -9,7 +9,10 @@
  */
 
 import type * as ResendOTP from "../ResendOTP.js";
+import type * as assistantPrompt from "../assistantPrompt.js";
 import type * as auth from "../auth.js";
+import type * as chat from "../chat.js";
+import type * as chatRules from "../chatRules.js";
 import type * as contact from "../contact.js";
 import type * as contactRules from "../contactRules.js";
 import type * as http from "../http.js";
@@ -23,7 +26,10 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   ResendOTP: typeof ResendOTP;
+  assistantPrompt: typeof assistantPrompt;
   auth: typeof auth;
+  chat: typeof chat;
+  chatRules: typeof chatRules;
   contact: typeof contact;
   contactRules: typeof contactRules;
   http: typeof http;
