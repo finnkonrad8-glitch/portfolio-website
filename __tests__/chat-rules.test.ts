@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest"
 import {
   CHAT_LIMITS,
+  cleanReply,
   normalizeSessionId,
   prepareHistory,
   usageWindows,
@@ -50,6 +51,28 @@ describe("prepareHistory", () => {
     const total = history.reduce((sum, turn) => sum + turn.content.length, 0)
     expect(total).toBeLessThanOrEqual(CHAT_LIMITS.historyChars)
     expect(history[history.length - 1]).toEqual(user("latest"))
+  })
+})
+
+describe("cleanReply", () => {
+  it("swaps em dashes for commas", () => {
+    expect(cleanReply(" Fast \u2014 and tidy. ", false)).toBe("Fast, and tidy.")
+  })
+
+  it("trims a cut-off reply back to the last full sentence", () => {
+    expect(cleanReply("First idea. Second idea! Third and", true)).toBe(
+      "First idea. Second idea!",
+    )
+    expect(cleanReply("Options:\n- Dashboards\n- Alerts for", true)).toBe(
+      "Options:\n- Dashboards",
+    )
+  })
+
+  it("keeps a cut-off reply with no sentence break, and leaves full ones alone", () => {
+    expect(cleanReply("Just one long clause", true)).toBe(
+      "Just one long clause",
+    )
+    expect(cleanReply("Version 2.0 is out", false)).toBe("Version 2.0 is out")
   })
 })
 

@@ -45,6 +45,18 @@ export function prepareHistory(messages: ChatTurn[]): ChatTurn[] | null {
   return kept
 }
 
+/**
+ * Tidies a model reply: house style has no em dashes, and a reply that hit
+ * the length cap is trimmed back to its last complete sentence or line.
+ */
+export function cleanReply(text: string, truncated: boolean): string {
+  const reply = text.trim().replace(/\s*\u2014\s*/g, ", ")
+  if (!truncated) return reply
+  let end = -1
+  for (const match of reply.matchAll(/[.!?](?=\s|$)|\n/g)) end = match.index
+  return end > 0 ? reply.slice(0, end + 1).trim() : reply
+}
+
 /** Session ids come from the browser, so only a safe shape is accepted. */
 export function normalizeSessionId(sessionId: string): string {
   return /^[A-Za-z0-9-]{8,64}$/.test(sessionId) ? sessionId : "anonymous"

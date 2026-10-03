@@ -3,6 +3,7 @@ import { internal } from "./_generated/api"
 import { action, internalMutation } from "./_generated/server"
 import { systemPrompt } from "./assistantPrompt"
 import {
+  cleanReply,
   normalizeSessionId,
   prepareHistory,
   usageWindows,
@@ -40,13 +41,17 @@ export const ask = action({
       const result = await callMacalyJson("/api/client-app/llm-usage", {
         preset: "DOCS",
         temperature: 0.4,
-        maxTokens: 500,
+        // Generous: the model's hidden reasoning counts toward this cap.
+        // The prompt keeps visible answers short.
+        maxTokens: 2000,
         messages: [{ role: "system", content: systemPrompt }, ...history],
       })
-      const text = typeof result.text === "string" ? result.text.trim() : ""
+      const text = cleanReply(
+        typeof result.text === "string" ? result.text : "",
+        result.finishReason === "length",
+      )
       if (!text) return { ok: false, error: "unavailable" }
-      // House style: no em dashes, even if the model slips one in.
-      return { ok: true, text: text.replace(/\s*\u2014\s*/g, ", ") }
+      return { ok: true, text }
     } catch (error) {
       console.error("Chat assistant request failed:", error)
       return { ok: false, error: "unavailable" }
