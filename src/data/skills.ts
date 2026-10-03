@@ -27,7 +27,7 @@ export const coreSkills: Skill[] = [
     description:
       'Google Sheets and Workspace automations: custom menus, time-based triggers, Gmail sends, and integrations.',
     icon: Braces,
-    tags: ['Google Sheets', 'Gmail', 'Triggers'],
+    tags: ['Google Sheets', 'APIs', 'Triggers', 'Gmail'],
   },
   {
     name: 'Canva',
@@ -39,31 +39,37 @@ export const coreSkills: Skill[] = [
   {
     name: 'Web Development',
     description:
-      'Responsive, accessible websites and apps, built to WCAG and ADA standards and designed to grow with you.',
+      'Website design and WCAG 2.1 AA, ADA, and AODA accessibility remediation for WordPress, Shopify, and Wix, plus web apps built in Bubble.',
     icon: CodeXml,
-    tags: ['HTML & CSS', 'JavaScript', 'React', 'Accessibility'],
+    tags: ['WordPress', 'Shopify', 'Wix', 'Bubble', 'WCAG 2.1 AA'],
   },
   {
     name: 'Obsidian',
     description:
       'Vaults with clear structure, templates, and links that turn scattered notes into a usable second brain.',
     icon: Waypoints,
-    tags: ['Vault design', 'Templates', 'Linking'],
+    tags: ['Vault design', 'Migrations', 'Dataview', 'Templater', 'Sync'],
   },
 ]
 
 export const toolkit = [
   'Microsoft Excel',
   'Google Sheets',
-  'Email Automation',
-  'Google Workspace',
-  'UI/UX Design',
-  'Responsive Design',
-  'WCAG 2.x',
-  'ADA Compliance',
-  'Brand Identity',
-  'Ebook Design',
-  'Knowledge Management',
+  'Samsara & Motive APIs',
+  'Google Maps API',
+  'WhatsApp',
+  'n8n',
+  'Zapier',
+  'Make',
+  'HubSpot',
+  'Smartlead',
+  'Instantly',
+  'Systeme.io',
+  'Apollo',
+  'Clay',
+  'Fillable PDFs',
+  'ADA & AODA',
+  'Python (openpyxl)',
 ]
 
 export const roleDetails = [
@@ -87,4 +93,18 @@ export const roleDetails = [
     description:
       'Clean, accessible interfaces plus brand assets designed in Canva.',
   },
+]
+
+export const workingStyle = [
+  'Written-first: every scope, change, and handover on record',
+  'A clear guide ships with every build',
+  'Tested end to end before delivery',
+]
+
+export const industries = [
+  'Trucking and logistics',
+  'Nonprofits and churches',
+  'Community associations',
+  'Wedding and lifestyle brands',
+  'IT consulting',
 ]

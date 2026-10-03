@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ArrowUpRight, Quote } from 'lucide-react'
 import { PageShell } from '@/components/layout/page-shell'
 import { buttonVariants } from '@/components/shared/button'
 import { CtaBand } from '@/components/shared/cta-band'
@@ -33,10 +33,11 @@ function ProjectPage() {
   const next = projects[(index + 1) % projects.length]
 
   const facts = [
+    { label: 'Client', value: project.client },
     { label: 'Category', value: project.category },
-    { label: 'Role', value: project.role },
     { label: 'Year', value: project.year },
-  ].filter((fact) => fact.value)
+    { label: 'Role', value: project.role },
+  ]
 
   return (
     <PageShell>
@@ -57,9 +58,7 @@ function ProjectPage() {
             </Link>
 
             <div className="fade-up mt-8 max-w-3xl" style={delay(60)}>
-              <Eyebrow>
-                {project.draft ? 'Case study coming soon' : 'Case study'}
-              </Eyebrow>
+              <Eyebrow>Case study</Eyebrow>
               <h1 className="mt-4 font-display text-4xl leading-[1.02] font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl">
                 {project.title}
               </h1>
@@ -68,28 +67,29 @@ function ProjectPage() {
               </p>
             </div>
 
-            <div
-              className="fade-up mt-8 flex flex-wrap items-center gap-x-8 gap-y-4"
-              style={delay(120)}
-            >
-              {facts.length > 0 ? (
-                <dl className="flex flex-wrap gap-x-8 gap-y-3">
-                  {facts.map((fact) => (
-                    <div key={fact.label}>
-                      <dt className="font-mono text-[0.7rem] tracking-[0.15em] text-muted-foreground uppercase">
-                        {fact.label}
-                      </dt>
-                      <dd className="mt-1 text-sm">{fact.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              ) : null}
+            <div className="fade-up mt-9" style={delay(120)}>
+              <dl className="grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+                {facts.map((fact) => (
+                  <div key={fact.label} className="border-l border-border pl-4">
+                    <dt className="font-mono text-[0.7rem] tracking-[0.15em] text-muted-foreground uppercase">
+                      {fact.label}
+                    </dt>
+                    <dd className="mt-1 text-sm leading-relaxed">
+                      {fact.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
               {project.liveUrl ? (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={buttonVariants({ variant: 'primary', size: 'md' })}
+                  className={buttonVariants({
+                    variant: 'primary',
+                    size: 'md',
+                    className: 'mt-8',
+                  })}
                 >
                   Visit live site
                   <ArrowUpRight aria-hidden />
@@ -101,50 +101,86 @@ function ProjectPage() {
         </header>
 
         <div className="container-page">
-          <figure
-            className="fade-up overflow-hidden rounded-3xl border border-border bg-secondary"
-            style={delay(180)}
-          >
-            <img
-              src={project.image.src}
-              alt={project.image.alt}
-              width={1600}
-              height={1000}
-              className="aspect-[16/10] w-full object-cover"
-            />
-          </figure>
-
-          <div className="grid gap-12 py-16 lg:grid-cols-[1.4fr_0.6fr] lg:gap-16 lg:py-20">
-            <section aria-labelledby="overview-title" className="reveal">
-              <h2
-                id="overview-title"
-                className="font-display text-3xl font-bold tracking-tight"
-              >
-                Overview
-              </h2>
-              <div className="mt-6 space-y-5 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
-                {project.overview.map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
+          <figure className="fade-up" style={delay(180)}>
+            <div className="overflow-hidden rounded-3xl border border-border bg-secondary shadow-[0_40px_80px_-40px_hsl(var(--accent)/0.25)]">
+              <img
+                src={project.image.src}
+                alt={project.image.alt}
+                width={1600}
+                height={1000}
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </div>
+            {project.gallery?.length ? (
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                {project.gallery.map((shot) => (
+                  <div
+                    key={shot.src}
+                    className="overflow-hidden rounded-2xl border border-border bg-secondary"
+                  >
+                    <img
+                      src={shot.src}
+                      alt={shot.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={1600}
+                      height={1000}
+                      className="aspect-[16/10] w-full object-cover"
+                    />
+                  </div>
                 ))}
               </div>
+            ) : null}
+            {project.imageNote ? (
+              <figcaption className="mt-3 font-mono text-[0.7rem] leading-relaxed text-muted-foreground">
+                {project.imageNote}
+              </figcaption>
+            ) : null}
+          </figure>
 
-              <h2 className="mt-14 font-display text-3xl font-bold tracking-tight">
-                Highlights
-              </h2>
-              <ul className="mt-6 space-y-4">
-                {project.highlights.map((item) => (
-                  <li
-                    key={item}
-                    className="flex gap-3 text-base leading-relaxed"
-                  >
-                    <span className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
-                      <Check aria-hidden className="size-3" />
+          <section aria-label="Key numbers" className="reveal mt-14">
+            <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border lg:grid-cols-4">
+              {project.metrics.map((metric) => (
+                <div key={metric.label} className="bg-card p-6 sm:p-7">
+                  <dt className="sr-only">{metric.label}</dt>
+                  <dd>
+                    <span className="block font-display text-4xl font-bold tracking-tight text-accent sm:text-5xl">
+                      {metric.value}
                     </span>
-                    {item}
-                  </li>
+                    <span className="mt-2 block text-sm text-muted-foreground">
+                      {metric.label}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
+          <div className="grid gap-12 py-16 lg:grid-cols-[1.4fr_0.6fr] lg:gap-16 lg:py-20">
+            <div className="space-y-14">
+              <StorySection id="problem" step="01" title="The problem">
+                <p>{project.problem}</p>
+              </StorySection>
+              <StorySection id="solution" step="02" title="What I built">
+                {project.solution.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
                 ))}
-              </ul>
-            </section>
+              </StorySection>
+              <StorySection id="result" step="03" title="The result">
+                <p className="text-foreground/90">{project.result}</p>
+                {project.quote ? (
+                  <figure className="mt-8 rounded-2xl border border-accent/25 bg-accent/5 p-6 sm:p-8">
+                    <Quote aria-hidden className="size-6 text-accent" />
+                    <blockquote className="mt-4 font-display text-2xl leading-snug font-semibold tracking-tight text-foreground">
+                      “{project.quote.text}”
+                    </blockquote>
+                    <figcaption className="mt-4 text-sm text-muted-foreground">
+                      {project.quote.attribution}
+                    </figcaption>
+                  </figure>
+                ) : null}
+              </StorySection>
+            </div>
 
             <aside aria-label="Project details" className="reveal lg:pt-2">
               <div className="rounded-2xl border border-border bg-card p-6 lg:sticky lg:top-24">
@@ -160,23 +196,28 @@ function ProjectPage() {
                     </li>
                   ))}
                 </ul>
+                <p className="mt-6 border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
+                  {project.liveUrl
+                    ? 'Live link above.'
+                    : 'No public link: this is a private client system.'}
+                </p>
                 {next && next.slug !== project.slug ? (
                   <Link
                     to="/projects/$slug"
                     params={{ slug: next.slug }}
-                    className="group mt-8 flex items-center justify-between gap-3 border-t border-border pt-6 text-sm"
+                    className="group mt-6 flex items-center justify-between gap-3 border-t border-border pt-6 text-sm"
                   >
                     <span>
                       <span className="block font-mono text-[0.7rem] tracking-[0.15em] text-muted-foreground uppercase">
                         Next project
                       </span>
-                      <span className="mt-1 block font-display text-lg font-semibold transition-colors group-hover:text-accent">
+                      <span className="mt-1 block font-display text-lg leading-snug font-semibold transition-colors group-hover:text-accent">
                         {next.title}
                       </span>
                     </span>
                     <ArrowRight
                       aria-hidden
-                      className="size-4 transition-transform duration-300 group-hover:translate-x-1"
+                      className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
                     />
                   </Link>
                 ) : null}
@@ -186,7 +227,39 @@ function ProjectPage() {
         </div>
       </article>
 
-      <CtaBand />
+      <CtaBand
+        title="Want a system like this?"
+        description="Tell me about the manual process slowing you down, and I'll show you what it could look like."
+      />
     </PageShell>
+  )
+}
+
+function StorySection({
+  id,
+  step,
+  title,
+  children,
+}: {
+  id: string
+  step: string
+  title: string
+  children: React.ReactNode
+}) {
+  return (
+    <section aria-labelledby={`${id}-title`} className="reveal">
+      <div className="flex items-baseline gap-4">
+        <span className="font-mono text-sm text-accent">{step}</span>
+        <h2
+          id={`${id}-title`}
+          className="font-display text-3xl font-bold tracking-tight"
+        >
+          {title}
+        </h2>
+      </div>
+      <div className="mt-5 space-y-5 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
+        {children}
+      </div>
+    </section>
   )
 }

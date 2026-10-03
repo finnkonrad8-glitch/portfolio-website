@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Iyodo Oluwatosin · Résumé</title>
+    <!--
+      Source for public/Iyodo-Oluwatosin-Resume.pdf (A4, one page).
+      To regenerate: open this file in Chrome, Print, "Save as PDF",
+      paper A4, margins None, background graphics on.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=League+Spartan:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      :root {
+        --ink: #141312;
+        --paper: #faf8f5;
+        --text: #23201e;
+        --muted: #5e5853;
+        --rule: #e3dfda;
+        --side: #f4f2ef;
+        --accent: #0f7a4a; /* print-safe green: 5.6:1 on white */
+        --accent-bright: #3ee092; /* only on the dark header */
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 210mm;
+        height: 297mm;
+      }
+      body {
+        font-family: 'DM Sans', Arial, sans-serif;
+        font-size: 8.4pt;
+        line-height: 1.38;
+        color: var(--text);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .page {
+        width: 210mm;
+        height: 297mm;
+        display: grid;
+        grid-template-rows: max-content minmax(0, 1fr);
+        overflow: hidden;
+      }
+
+      /* Header */
+      header {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 9mm 14mm 7.5mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        overflow: hidden;
+      }
+      header .mark {
+        position: absolute;
+        right: -20mm;
+        top: -22mm;
+        width: 66mm;
+        height: 66mm;
+        opacity: 0.05;
+      }
+      .identity {
+        display: flex;
+        align-items: center;
+        gap: 5mm;
+      }
+      .identity svg {
+        width: 15mm;
+        height: 15mm;
+        flex: none;
+      }
+      h1 {
+        font-family: 'League Spartan', sans-serif;
+        font-weight: 700;
+        font-size: 27pt;
+        line-height: 1;
+        letter-spacing: -0.3pt;
+      }
+      .role {
+        margin-top: 2.2mm;
+        font-size: 8.6pt;
+        font-weight: 600;
+        letter-spacing: 0.3pt;
+        text-transform: uppercase;
+        color: var(--accent-bright);
+      }
+      .contact {
+        list-style: none;
+        text-align: right;
+        font-size: 8.3pt;
+        line-height: 1.7;
+        color: #d9d4ce;
+        position: relative;
+      }
+      .contact b {
+        color: var(--paper);
+        font-weight: 600;
+      }
+
+      /* Body */
+      .body {
+        display: grid;
+        grid-template-columns: 63mm 1fr;
+      }
+      aside {
+        background: var(--side);
+        padding: 7mm 7mm 6mm 14mm;
+      }
+      main {
+        padding: 7mm 14mm 6mm 8mm;
+      }
+      h2 {
+        font-size: 8pt;
+        font-weight: 700;
+        letter-spacing: 0.3pt;
+        text-transform: uppercase;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 2.5mm;
+        margin-bottom: 3mm;
+      }
+      h2::after {
+        content: '';
+        flex: 1;
+        height: 0.6pt;
+        background: var(--rule);
+      }
+      aside h2::after {
+        background: #d9d4ce;
+      }
+      section + section {
+        margin-top: 4.6mm;
+      }
+
+      /* Sidebar */
+      .numbers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.8mm 4mm;
+      }
+      .numbers b {
+        display: block;
+        font-family: 'League Spartan', sans-serif;
+        font-weight: 700;
+        font-size: 17pt;
+        line-height: 1;
+        color: var(--ink);
+      }
+      .numbers span {
+        display: block;
+        margin-top: 1mm;
+        font-size: 7.4pt;
+        line-height: 1.3;
+        color: var(--muted);
+      }
+      .skill + .skill {
+        margin-top: 1.9mm;
+      }
+      .skill h3 {
+        font-size: 8.3pt;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .skill p {
+        font-size: 7.6pt;
+        color: var(--muted);
+        line-height: 1.32;
+      }
+      .ticks {
+        list-style: none;
+      }
+      .ticks li {
+        position: relative;
+        padding-left: 4mm;
+        font-size: 7.7pt;
+        line-height: 1.34;
+      }
+      .ticks li + li {
+        margin-top: 0.9mm;
+      }
+      .ticks li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 1.55mm;
+        width: 1.6mm;
+        height: 1.6mm;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      /* Main */
+      .profile {
+        font-size: 8.8pt;
+        line-height: 1.45;
+      }
+      .job-head,
+      .project-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 4mm;
+      }
+      .job-head h3,
+      .project-head h3 {
+        font-family: 'League Spartan', sans-serif;
+        font-size: 11pt;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -0.1pt;
+      }
+      .when {
+        font-size: 7.9pt;
+        font-weight: 600;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .meta {
+        font-size: 7.9pt;
+        font-weight: 500;
+        color: var(--accent);
+        margin: 0.4mm 0 1.6mm;
+      }
+      .bullets {
+        list-style: none;
+      }
+      .bullets li {
+        position: relative;
+        padding-left: 4mm;
+      }
+      .bullets li + li {
+        margin-top: 0.8mm;
+      }
+      .bullets li::before {
+        content: '';
+        position: absolute;
+        left: 0.4mm;
+        top: 1.9mm;
+        width: 1.8mm;
+        height: 0.6mm;
+        background: var(--accent);
+      }
+      .project + .project {
+        margin-top: 2.5mm;
+        padding-top: 2.5mm;
+        border-top: 0.6pt solid var(--rule);
+      }
+      .project p {
+        line-height: 1.4;
+      }
+      .result {
+        font-weight: 600;
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <svg class="mark" viewBox="0 0 200 200" fill="#faf8f5" aria-hidden="true">
+          <path d="M24.87 34A100 100 0 0 1 175.13 34Z" />
+          <path d="M2.23 79H78V197.55A100 100 0 0 1 2.23 79Z" />
+          <path d="M122 79H197.77A100 100 0 0 1 122 197.55Z" />
+        </svg>
+        <div class="identity">
+          <svg viewBox="0 0 200 200" fill="#faf8f5" aria-hidden="true">
+            <path d="M24.87 34A100 100 0 0 1 175.13 34Z" />
+            <path d="M2.23 79H78V197.55A100 100 0 0 1 2.23 79Z" />
+            <path d="M122 79H197.77A100 100 0 0 1 122 197.55Z" />
+          </svg>
+          <div>
+            <h1>Iyodo Oluwatosin</h1>
+            <p class="role">Spreadsheet Systems &amp; Automation Specialist</p>
+          </div>
+        </div>
+        <ul class="contact">
+          <li><a href="mailto:tolexpert87@gmail.com"><b>tolexpert87@gmail.com</b></a></li>
+          <li>WhatsApp +234 915 186 1215</li>
+          <li><a href="https://www.fiverr.com/tolexpert87">fiverr.com/tolexpert87</a></li>
+          <li>Nigeria · Remote, working worldwide</li>
+        </ul>
+      </header>
+
+      <div class="body">
+        <aside>
+          <section>
+            <h2>By the numbers</h2>
+            <div class="numbers">
+              <div><b>2,219</b><span>formulas audited to zero errors</span></div>
+              <div><b>60+</b><span>functions in one dispatch system</span></div>
+              <div><b>680</b><span>notes recovered in one migration</span></div>
+              <div><b>4</b><span>live API integrations in one build</span></div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Core skills</h2>
+            <div class="skill">
+              <h3>Spreadsheet Systems</h3>
+              <p>Excel, Google Sheets, VBA, Apps Script, dashboards, financial trackers</p>
+            </div>
+            <div class="skill">
+              <h3>Automation &amp; APIs</h3>
+              <p>Samsara, Motive, Google Maps, WhatsApp, n8n, Zapier, Make</p>
+            </div>
+            <div class="skill">
+              <h3>Email Automation &amp; CRM</h3>
+              <p>Smartlead, Instantly, Systeme.io, HubSpot, Apollo, Clay</p>
+            </div>
+            <div class="skill">
+              <h3>Design</h3>
+              <p>Canva brand kits, ebooks, workbooks, fillable PDFs, user guides</p>
+            </div>
+            <div class="skill">
+              <h3>Web &amp; Accessibility</h3>
+              <p>Website design, WCAG 2.1 AA, ADA and AODA remediation for WordPress, Shopify and Wix</p>
+            </div>
+            <div class="skill">
+              <h3>Apps</h3>
+              <p>VBA desktop apps, Bubble web apps</p>
+            </div>
+            <div class="skill">
+              <h3>Knowledge Management</h3>
+              <p>Obsidian vaults and migrations, Dataview, Templater, Obsidian Sync</p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Working style</h2>
+            <ul class="ticks">
+              <li>Written-first: every scope, change and handover on record</li>
+              <li>A clear guide ships with every build</li>
+              <li>Tested end to end before delivery</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Industries served</h2>
+            <ul class="ticks">
+              <li>Trucking and logistics</li>
+              <li>Nonprofits and churches</li>
+              <li>Community associations</li>
+              <li>Wedding and lifestyle brands</li>
+              <li>IT consulting</li>
+            </ul>
+          </section>
+        </aside>
+
+        <main>
+          <section>
+            <h2>Profile</h2>
+            <p class="profile">
+              Freelance systems builder who turns messy, manual processes into tools small
+              businesses rely on every day. Builds Excel and Google Sheets systems powered by VBA
+              and Apps Script, API and email automations, websites and apps, Canva designs, WCAG
+              accessibility fixes and Obsidian knowledge vaults for clients across Canada and the
+              United States.
+            </p>
+          </section>
+
+          <section>
+            <h2>Experience</h2>
+            <div class="job-head">
+              <h3>Freelance Systems Developer</h3>
+              <span class="when">2025 to Present</span>
+            </div>
+            <p class="meta">Self-employed · Fiverr and direct clients · Remote</p>
+            <ul class="bullets">
+              <li>Design and deliver custom spreadsheet systems, automations and digital products for small businesses, nonprofits and brands in Canada and the United States.</li>
+              <li>Run every project end to end in writing, from scoping and pricing through build, testing, documentation and handover.</li>
+              <li>Ship a written guide with every build and verify before delivery with formula audits and full end-to-end test runs.</li>
+              <li>Earned 5-star and 4.7-star reviews and repeat business, including a trucking company that returned to scope a larger platform build.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Selected projects</h2>
+            <div class="project">
+              <div class="project-head"><h3>Horizon Transport Dispatch System</h3><span class="when">2026</span></div>
+              <p class="meta">Google Sheets · Apps Script · Samsara, Motive, Google Maps and WhatsApp integrations</p>
+              <p>Live dispatch hub for a Canadian trucking company: 14 tabs and 60+ Apps Script functions tracking 51 trucks, 96 trailers and 47 drivers, with yard color-coding and one-click WhatsApp dispatch. <span class="result">Delivered in three phases with a 5-star review.</span></p>
+            </div>
+            <div class="project">
+              <div class="project-head"><h3>Wedding Tax Write-Off Matrix for Curated Bride</h3><span class="when">2026</span></div>
+              <p class="meta">Google Sheets · Branded digital product</p>
+              <p>Resale-ready tax tool for brides covering US federal tax year 2026: a marriage bonus and penalty calculator on verified IRS brackets, filing status comparison, charitable and business expense ledgers, and a live KPI dashboard. <span class="result">The client plans to return every year for updates.</span></p>
+            </div>
+            <div class="project">
+              <div class="project-head"><h3>Church Directory Desktop App</h3><span class="when">2026</span></div>
+              <p class="meta">Microsoft Excel · VBA (8 modules)</p>
+              <p>Rebuilt a broken directory file into a cross-linked desktop app for a regional church association, managing 78 leader profiles and 123 group memberships with photos, vCard sharing and reports. <span class="result">4.7-star review, earned on a previous Fiverr account.</span></p>
+            </div>
+            <div class="project">
+              <div class="project-head"><h3>Community Association Budget Tracker</h3><span class="when">2026</span></div>
+              <p class="meta">Microsoft Excel · Financial dashboard</p>
+              <p>17-tab system taking a seven-figure budget from monthly actuals to a live dashboard. <span class="result">2,219 formulas audited to zero errors and a full Q1 test run before delivery.</span></p>
+            </div>
+            <div class="project">
+              <div class="project-head"><h3>OneNote to Obsidian Recovery Migration</h3><span class="when">2026</span></div>
+              <p class="meta">Obsidian · OneNoteMdExporter · Custom cleanup script · Obsidian Sync</p>
+              <p>Recovered 680 notes across 38 sections that a client believed were lost (the official importer found only 42), then cleaned and synced the vault to iPhone and Windows. <span class="result">680 notes recovered from a job quoted at 30.</span></p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

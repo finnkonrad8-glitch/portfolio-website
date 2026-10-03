@@ -22,8 +22,8 @@ function ProjectsPage() {
             <SectionHeading
               as="h1"
               eyebrow="Projects"
-              title="Selected work: messy processes, made to just work."
-              description="Spreadsheet systems, websites, automations, and designs. Each case study covers the problem, what I built, and what changed for the business."
+              title="Real client work: messy processes, made to just work."
+              description="Dispatch hubs, desktop apps, financial dashboards, digital products, and knowledge vaults. Each case study covers the problem, what I built, and what changed for the client."
             />
           </div>
         </div>
@@ -34,10 +34,14 @@ function ProjectsPage() {
           {projects.map((project, index) => (
             <li
               key={project.slug}
-              className="fade-up"
+              className={index === 0 ? 'fade-up md:col-span-2' : 'fade-up'}
               style={delay(120 + index * 80)}
             >
-              <ProjectCard project={project} headingLevel="h2" />
+              <ProjectCard
+                project={project}
+                headingLevel="h2"
+                featured={index === 0}
+              />
             </li>
           ))}
         </ul>

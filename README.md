@@ -50,7 +50,9 @@ convex/
   schema.ts          contactMessages table
   contact.ts         submit mutation + owner email notification
   contactRules.ts    Validation shared by the form and the server
-public/              Favicon, app icons, project images
+public/              Favicon, app icons, project screenshots, résumé PDF
+resume/
+  resume.html        Source for public/Iyodo-Oluwatosin-Resume.pdf (A4, one page)
 scripts/
   generate-icons.mjs Renders public/logo192.png and logo512.png from the logo geometry
 ```
@@ -74,10 +76,13 @@ Fonts: League Spartan (headings, matches the logo), DM Sans (body), JetBrains Mo
 
 ## Editing content
 
-- **Personal details, résumé, email:** `src/data/site.ts`. Set `resumeUrl` to `'/resume.pdf'` after
-  adding the file to `public/`, and set `email` to show it on the Contact page.
-- **Projects:** `src/data/projects.ts`. Each entry becomes a card and a `/projects/<slug>` page.
-  Put screenshots in `public/projects/` and remove `draft: true` once the case study is real.
+- **Personal details, résumé link, email, headline numbers:** `src/data/site.ts`.
+- **Projects:** `src/data/projects.ts`. Each entry becomes a card and a `/projects/<slug>` page
+  (prerendered automatically). Screenshots live in `public/projects/`. The current ones are
+  recreations with sample data, labelled as such on each case study; swap in real, blurred
+  screenshots any time and update `imageNote`.
+- **Résumé:** edit `resume/resume.html`, open it in Chrome, Print, Save as PDF (A4, margins None,
+  background graphics on), and save over `public/Iyodo-Oluwatosin-Resume.pdf`.
 - **Services, skills, roles:** `src/data/services.ts` and `src/data/skills.ts`.
 - **SEO titles and descriptions:** `src/metadata.json`.
 

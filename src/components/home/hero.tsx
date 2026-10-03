@@ -126,7 +126,7 @@ const chips = [
     className: 'bottom-[24%] left-0 sm:left-[-2%]',
     delay: 2400,
   },
-  { label: 'WCAG 2.2 AA ✓', className: 'bottom-[4%] right-[4%]', delay: 3600 },
+  { label: 'WCAG 2.1 AA ✓', className: 'bottom-[4%] right-[4%]', delay: 3600 },
   {
     label: '[[Second Brain]]',
     className: 'top-[-2%] right-[16%] hidden sm:flex',

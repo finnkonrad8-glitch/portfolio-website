@@ -2,17 +2,36 @@ import { Link } from '@tanstack/react-router'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Tag } from '@/components/shared/tag'
 import type { Project } from '@/data/projects'
+import { cn } from '@/lib/utils'
+
+const MAX_TAGS = 4
 
 export function ProjectCard({
   project,
   headingLevel: Heading = 'h3',
+  featured = false,
 }: {
   project: Project
   headingLevel?: 'h2' | 'h3'
+  /** Wide layout: image beside the text on large screens. */
+  featured?: boolean
 }) {
+  const extraTags = project.tags.length - MAX_TAGS
+  const metrics = project.metrics.slice(0, featured ? 3 : 2)
+
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground/25 hover:shadow-[0_24px_60px_-30px_hsl(var(--accent)/0.35)]">
-      <div className="relative aspect-[16/10] overflow-hidden border-b border-border bg-secondary">
+    <article
+      className={cn(
+        'group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 ease-out hover:-translate-y-1 hover:border-foreground/25 hover:shadow-[0_24px_60px_-30px_hsl(var(--accent)/0.35)]',
+        featured && 'lg:grid lg:grid-cols-[1.35fr_1fr]',
+      )}
+    >
+      <div
+        className={cn(
+          'relative aspect-[16/10] overflow-hidden border-b border-border bg-secondary',
+          featured && 'lg:aspect-auto lg:min-h-full lg:border-r lg:border-b-0',
+        )}
+      >
         <img
           src={project.image.src}
           alt={project.image.alt}
@@ -20,21 +39,20 @@ export function ProjectCard({
           decoding="async"
           width={1600}
           height={1000}
-          className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="size-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
-        {project.draft ? (
-          <span className="absolute top-4 left-4 rounded-full border border-border bg-background/80 px-3 py-1 font-mono text-[0.68rem] text-foreground/80 backdrop-blur">
-            Case study coming soon
-          </span>
-        ) : null}
       </div>
 
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         <p className="font-mono text-xs text-muted-foreground">
-          {project.category}
-          {project.year ? ` · ${project.year}` : ''}
+          {project.category} · {project.year}
         </p>
-        <Heading className="mt-3 font-display text-2xl font-semibold tracking-tight">
+        <Heading
+          className={cn(
+            'mt-3 font-display font-semibold tracking-tight text-balance',
+            featured ? 'text-2xl sm:text-3xl' : 'text-2xl',
+          )}
+        >
           {/* Stretched link: the whole card opens the case study. */}
           <Link
             to="/projects/$slug"
@@ -48,12 +66,38 @@ export function ProjectCard({
           {project.summary}
         </p>
 
+        <dl
+          className={cn(
+            'mt-6 grid gap-3 border-y border-border py-4',
+            metrics.length === 3 ? 'grid-cols-3' : 'grid-cols-2',
+          )}
+        >
+          {metrics.map((metric) => (
+            <div key={metric.label}>
+              <dt className="sr-only">{metric.label}</dt>
+              <dd>
+                <span className="block font-display text-2xl font-bold tracking-tight text-foreground">
+                  {metric.value}
+                </span>
+                <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
+                  {metric.label}
+                </span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+
         <ul className="mt-5 flex flex-wrap gap-2" aria-label="Tech used">
-          {project.tags.map((tag) => (
+          {project.tags.slice(0, MAX_TAGS).map((tag) => (
             <li key={tag}>
               <Tag>{tag}</Tag>
             </li>
           ))}
+          {extraTags > 0 ? (
+            <li>
+              <Tag className="text-foreground/70">+{extraTags} more</Tag>
+            </li>
+          ) : null}
         </ul>
 
         <div className="mt-auto flex items-center justify-between gap-4 pt-7">

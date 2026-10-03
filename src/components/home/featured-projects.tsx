@@ -26,9 +26,12 @@ export function FeaturedProjects() {
       </div>
 
       <ul className="mt-14 grid gap-6 md:grid-cols-2">
-        {projects.slice(0, 2).map((project) => (
-          <li key={project.slug} className="reveal">
-            <ProjectCard project={project} />
+        {projects.slice(0, 3).map((project, index) => (
+          <li
+            key={project.slug}
+            className={index === 0 ? 'reveal md:col-span-2' : 'reveal'}
+          >
+            <ProjectCard project={project} featured={index === 0} />
           </li>
         ))}
       </ul>

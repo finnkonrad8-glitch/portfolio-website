@@ -6,7 +6,13 @@ import { buttonVariants } from '@/components/shared/button'
 import { CtaBand } from '@/components/shared/cta-band'
 import { SectionHeading } from '@/components/shared/section-heading'
 import { Tag } from '@/components/shared/tag'
-import { coreSkills, roleDetails, toolkit } from '@/data/skills'
+import {
+  coreSkills,
+  industries,
+  roleDetails,
+  toolkit,
+  workingStyle,
+} from '@/data/skills'
 import { bio, site } from '@/data/site'
 import { delay } from '@/lib/motion'
 import { pageHead } from '@/lib/seo'
@@ -148,9 +154,52 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* How I work and who I work with */}
+      <section
+        aria-label="Working style and industries"
+        className="container-page pb-24"
+      >
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="reveal rounded-2xl border border-border bg-card p-7 sm:p-8">
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              Working style
+            </h2>
+            <ul className="mt-6 space-y-4">
+              {workingStyle.map((item) => (
+                <li key={item} className="flex gap-3 leading-relaxed">
+                  <span className="mt-1 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <Check aria-hidden className="size-3" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="reveal rounded-2xl border border-border bg-card p-7 sm:p-8">
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              Industries served
+            </h2>
+            <ul className="mt-6 flex flex-wrap gap-2.5">
+              {industries.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-border px-4 py-2 text-sm text-foreground/85"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              Based in Nigeria, working remotely with clients across Canada and
+              the United States.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         title="Want the full picture?"
-        description="Grab my résumé, see the work, or tell me what you're trying to fix."
+        description="Download my résumé, browse the case studies, or tell me what you're trying to fix."
       />
     </PageShell>
   )

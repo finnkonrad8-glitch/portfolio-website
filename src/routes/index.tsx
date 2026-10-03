@@ -4,6 +4,7 @@ import { Hero } from '@/components/home/hero'
 import { ProcessSteps } from '@/components/home/process-steps'
 import { ServicesGrid } from '@/components/home/services-grid'
 import { SkillsMarquee } from '@/components/home/skills-marquee'
+import { StatsBand } from '@/components/home/stats-band'
 import { PageShell } from '@/components/layout/page-shell'
 import { CtaBand } from '@/components/shared/cta-band'
 import { site } from '@/data/site'
@@ -50,6 +51,7 @@ function HomePage() {
     <PageShell>
       <Hero />
       <SkillsMarquee />
+      <StatsBand />
       <ServicesGrid />
       <ProcessSteps />
       <FeaturedProjects />
