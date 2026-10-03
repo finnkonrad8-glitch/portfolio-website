@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { useMutation } from 'convex/react'
 import {
   ChevronDown,
@@ -37,6 +37,11 @@ export function ContactForm() {
   const [sentTo, setSentTo] = useState<{ name: string; email: string } | null>(
     null,
   )
+  // Until React hydrates, a click would trigger the browser's native GET
+  // submit and put the visitor's details in the URL. Keep Send disabled
+  // (which also blocks Enter-key submission) until the form is interactive.
+  const [hydrated, setHydrated] = useState(false)
+  useEffect(() => setHydrated(true), [])
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -115,6 +120,7 @@ export function ContactForm() {
     <form
       noValidate
       onSubmit={handleSubmit}
+      data-state={hydrated ? 'ready' : 'loading'}
       aria-describedby="contact-form-note"
       className="relative rounded-2xl border border-border bg-card p-6 sm:p-8"
     >
@@ -221,8 +227,7 @@ export function ContactForm() {
         </p>
         <button
           type="submit"
-          disabled={submitting}
-          aria-disabled={submitting}
+          disabled={!hydrated || submitting}
           className={buttonVariants({ variant: 'primary', size: 'lg' })}
         >
           {submitting ? (
