@@ -31,7 +31,50 @@ function safeHref(raw: string): Href | null {
   return null
 }
 
-const INLINE = /(\*\*[^*\n]+\*\*|\[[^\]\n]+\]\([^)\s]+\))/g
+// **bold**, [label](url), or a bare https:// or mailto: link (trailing
+// punctuation stays outside the link).
+const INLINE =
+  /(\*\*[^*\n]+\*\*|\[[^\]\n]+\]\([^)\s]+\)|(?:https:\/\/|mailto:)[^\s()<>]*[^\s()<>.,!?;:'"])/g
+
+const LINK_CLASS =
+  'font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent'
+
+function linkOrText(
+  key: number,
+  label: string,
+  raw: string,
+  onNavigate: (href: string) => void,
+): ReactNode {
+  const target = safeHref(raw)
+  if (!target) return label
+  if (target.internal) {
+    return (
+      <a
+        key={key}
+        href={target.href}
+        className={LINK_CLASS}
+        onClick={(event) => {
+          if (event.metaKey || event.ctrlKey || event.shiftKey) return
+          event.preventDefault()
+          onNavigate(target.href)
+        }}
+      >
+        {label}
+      </a>
+    )
+  }
+  const mail = target.href.startsWith('mailto:')
+  return (
+    <a
+      key={key}
+      href={target.href}
+      className={LINK_CLASS}
+      {...(mail ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+    >
+      {label}
+    </a>
+  )
+}
 
 function inline(text: string, onNavigate: (href: string) => void): ReactNode[] {
   return text.split(INLINE).map((part, i) => {
@@ -44,36 +87,9 @@ function inline(text: string, onNavigate: (href: string) => void): ReactNode[] {
       )
     }
     const link = /^\[([^\]]+)\]\(([^)\s]+)\)$/.exec(part)
-    if (link) {
-      const target = safeHref(link[2])
-      if (!target) return link[1]
-      const className =
-        'font-medium text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent'
-      return target.internal ? (
-        <a
-          key={i}
-          href={target.href}
-          className={className}
-          onClick={(event) => {
-            if (event.metaKey || event.ctrlKey || event.shiftKey) return
-            event.preventDefault()
-            onNavigate(target.href)
-          }}
-        >
-          {link[1]}
-        </a>
-      ) : (
-        <a
-          key={i}
-          href={target.href}
-          className={className}
-          {...(target.href.startsWith('mailto:')
-            ? {}
-            : { target: '_blank', rel: 'noopener noreferrer' })}
-        >
-          {link[1]}
-        </a>
-      )
+    if (link) return linkOrText(i, link[1], link[2], onNavigate)
+    if (/^(?:https:\/\/|mailto:)/.test(part)) {
+      return linkOrText(i, part.replace(/^mailto:/, ''), part, onNavigate)
     }
     return part
   })
