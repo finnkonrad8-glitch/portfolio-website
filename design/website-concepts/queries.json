@@ -1,5 +1,5 @@
 {
-  "saffron-hero": { "q": "african food dinner table candlelight", "o": "landscape", "w": 1920 },
+  "saffron-hero": { "q": "african cuisine dishes table", "o": "landscape", "w": 1920 },
   "saffron-special": { "q": "grilled beef ribs glaze plate", "o": "square", "w": 700 },
   "saffron-dish1": { "q": "jollof rice", "o": "portrait", "w": 900 },
   "saffron-dish2": { "q": "suya skewers grill", "o": "portrait", "w": 900 },
@@ -47,14 +47,14 @@
 
   "oria-hero": { "q": "natural skincare products botanicals", "o": "landscape", "w": 1600 },
   "oria-p1": { "q": "body butter jar", "o": "portrait", "w": 900 },
-  "oria-p1b": { "q": "whipped cream texture skincare", "o": "portrait", "w": 900 },
+  "oria-p1b": { "q": "cream swatch texture skincare", "o": "portrait", "w": 900 },
   "oria-p2": { "q": "face oil dropper bottle", "o": "portrait", "w": 900 },
-  "oria-p3": { "q": "handmade soap bars", "o": "portrait", "w": 900 },
-  "oria-p4": { "q": "lip balm natural", "o": "portrait", "w": 900 },
-  "oria-ingredient": { "q": "shea butter", "o": "portrait", "w": 1100 },
+  "oria-p3": { "q": "african black soap", "o": "portrait", "w": 900 },
+  "oria-p4": { "q": "lip balm hibiscus flowers", "o": "portrait", "w": 900 },
+  "oria-ingredient": { "q": "shea nuts", "o": "portrait", "w": 1100 },
 
   "ember-hero": { "q": "pour over coffee roasted beans", "o": "portrait", "w": 1200 },
-  "ember-b1": { "q": "coffee bag packaging", "o": "portrait", "w": 900 },
+  "ember-b1": { "q": "kraft coffee bag beans", "o": "portrait", "w": 900 },
   "ember-b2": { "q": "coffee beans bowl", "o": "portrait", "w": 900 },
   "ember-b3": { "q": "espresso shot pouring", "o": "portrait", "w": 900 },
   "ember-b4": { "q": "coffee beans paper bag", "o": "portrait", "w": 900 },

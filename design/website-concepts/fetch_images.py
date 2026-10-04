@@ -56,17 +56,17 @@ def search(prefixes: list) -> None:
         cands[key] = [
             {
                 "id": p["id"],
-                "src": p["src"]["original"],
+                "src": p["src"]["large"].split("?")[0],
                 "alt": p.get("alt") or "",
                 "by": p.get("photographer", ""),
                 "url": p.get("url", ""),
-                "size": f'{p.get("width", "?")}x{p.get("height", "?")}',
+                "tone": p.get("avg_color", ""),
             }
             for p in photos
         ]
         print(key)
         for i, c in enumerate(cands[key][:6]):
-            print(f'  {i} {c["size"]} {c["alt"][:80]}')
+            print(f'  {i} {c["tone"]} {c["alt"][:90]}')
     CANDS.write_text(json.dumps(cands))
 
 
@@ -94,7 +94,8 @@ def fetch(picks: dict) -> None:
         choice = cands[key][int(picks.get(key, 0))]
         width = QUERIES[key]["w"]
         src = f'{choice["src"]}?auto=compress&cs=tinysrgb&w={width}'
-        with urllib.request.urlopen(src, timeout=60) as res:
+        req = urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=60) as res:
             img = Image.open(io.BytesIO(res.read())).convert("RGB")
         if img.width > width:
             img = img.resize((width, round(img.height * width / img.width)), Image.LANCZOS)
@@ -103,8 +104,8 @@ def fetch(picks: dict) -> None:
         images[key] = upload(tmp, key)
         credits[key] = f'{choice["by"]} {choice["url"]}'
         print(key, img.size, tmp.stat().st_size // 1024, "KB")
-    IMAGES.write_text(json.dumps(images, indent=1))
-    CREDITS.write_text(json.dumps(credits, indent=1))
+        IMAGES.write_text(json.dumps(images, indent=1))
+        CREDITS.write_text(json.dumps(credits, indent=1))
 
 
 if __name__ == "__main__":
