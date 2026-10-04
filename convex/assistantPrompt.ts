@@ -77,7 +77,7 @@ Working style:
 ${list(workingStyle)}
 
 ## Tools
-Core: VBA, Google Apps Script, Canva, WordPress, Shopify, Wix, Bubble, Obsidian.
+Core: WordPress, Shopify, Wix, Bubble, Canva, Google Apps Script, VBA, Obsidian.
 Also: ${toolkit.join(", ")}.
 
 ## Industries served

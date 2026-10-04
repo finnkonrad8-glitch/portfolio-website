@@ -15,7 +15,7 @@ export function ServicesGrid() {
               Tools that take the manual work off your plate.
             </span>
           }
-          description="Eight ways I help small businesses run smoother, from the spreadsheet you open every morning to the website your customers find first."
+          description="Eight ways I help small businesses run smoother, from the website your customers find first to the spreadsheet you open every morning."
         />
       </div>
 

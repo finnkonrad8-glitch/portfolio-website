@@ -4,22 +4,22 @@
   },
   "/": {
     "title": "Iyodo Oluwatosin (Tolex) | Full-Stack & Automation Expert",
-    "description": "Tolex builds Excel and Google Sheets tools with VBA and Apps Script, websites, apps, and email automations that help small businesses run smoother.",
+    "description": "Tolex builds websites, Canva brand kits, workflow and email automations, and Excel and Google Sheets tools that help small businesses run smoother.",
     "openGraph": {}
   },
   "/about": {
-    "title": "About Tolex | VBA, Apps Script, Canva & Web Skills",
-    "description": "Meet Iyodo Oluwatosin (Tolex): full-stack developer, automation specialist, spreadsheet expert, and UI/UX designer. Skills, background, and résumé.",
+    "title": "About Tolex | Web, Canva, Automation & Spreadsheet Skills",
+    "description": "Meet Iyodo Oluwatosin (Tolex): full-stack developer, UI/UX designer, automation specialist, and spreadsheet expert. Skills, background, and résumé.",
     "openGraph": {}
   },
   "/projects": {
-    "title": "Projects by Tolex | Spreadsheets, Web Apps & Automation",
-    "description": "Case studies by Tolex: a live trucking dispatch hub, an Excel VBA desktop app, budget dashboards, a tax workbook product, and an Obsidian migration.",
+    "title": "Projects by Tolex | Websites, Automation & Spreadsheets",
+    "description": "Case studies by Tolex: a live trucking dispatch automation, a tax workbook product, an Excel VBA desktop app, budget dashboards, and an Obsidian migration.",
     "openGraph": {}
   },
   "/contact": {
-    "title": "Contact Tolex | Start Your Spreadsheet or Web Project",
-    "description": "Tell Tolex about the manual process slowing your business down. Send a message or hire Tolex on Fiverr for spreadsheet, web, and automation work.",
+    "title": "Contact Tolex | Start Your Web, Design, or Automation Project",
+    "description": "Tell Tolex about the manual process slowing your business down. Send a message or hire Tolex on Fiverr for web, design, automation, and spreadsheet work.",
     "openGraph": {}
   }
 }

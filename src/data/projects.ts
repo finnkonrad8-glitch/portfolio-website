@@ -2,6 +2,8 @@ export type ProjectImage = {
   /** Path under /public (e.g. /projects/my-shot.webp) or a full https URL. */
   src: string
   alt: string
+  /** Short name shown on the card carousel, e.g. "Driver hours". */
+  label?: string
 }
 
 export type Project = {
@@ -70,8 +72,21 @@ export const projects: Project[] = [
     role: 'Solo developer, from scoping to handover',
     image: {
       src: '/projects/horizon-dispatch.webp',
+      label: 'Dispatch board',
       alt: 'Dispatch tab of the Horizon Transport system in Google Sheets: trucks color-coded by yard with live location, reefer temperature, driver hours, and one-click WhatsApp dispatch buttons.',
     },
+    gallery: [
+      {
+        src: '/projects/horizon-trailers.webp',
+        label: 'Reefer monitor',
+        alt: 'Reefer and trailer monitor tab with return-air temperatures, fuel levels, and alarms from Samsara, with the custom Dispatch menu of Apps Script actions open.',
+      },
+      {
+        src: '/projects/horizon-hos.webp',
+        label: 'Driver hours',
+        alt: 'Driver hours tab with drive, shift, and cycle time left from Motive, and a trip check panel confirming a 632-mile load fits the driver’s remaining hours.',
+      },
+    ],
     imageNote: RECREATED,
   },
   {
@@ -108,11 +123,18 @@ export const projects: Project[] = [
     role: 'Solo developer: tax research, build, testing and delivery',
     image: {
       src: '/projects/wedding-tax-dashboard.webp',
+      label: 'Dashboard',
       alt: 'Dashboard of the Wedding Tax Write-Off Matrix showing four KPI cards and a filing status comparison chart, with sample data.',
     },
     gallery: [
       {
+        src: '/projects/wedding-tax-calculator.webp',
+        label: 'Marriage calculator',
+        alt: 'Marriage Calculator tab: two sample incomes compared as two single returns and as married filing jointly on 2026 brackets, showing a $390 marriage bonus.',
+      },
+      {
         src: '/projects/wedding-tax-cover.webp',
+        label: 'Cover and quick start',
         alt: 'Branded cover sheet of the Wedding Tax Write-Off Matrix with the Quick Start Guide.',
       },
     ],
@@ -140,7 +162,7 @@ export const projects: Project[] = [
       { value: '4.7★', label: 'review, plus a tip' },
     ],
     quote: {
-      text: "Petra is excellent to work with. She communicates well and responds to her client's needs well. A pleasure working with her. I would do it again (and will)!",
+      text: "[Tolex] is excellent to work with. She communicates well and responds to her client's needs well. A pleasure working with her. I would do it again (and will)!",
       attribution: 'Terry, Fiverr review (earned on a previous account)',
     },
     category: 'Desktop App (Excel VBA)',
@@ -155,8 +177,21 @@ export const projects: Project[] = [
     role: 'Solo developer: data rebuild, VBA, testing and handover',
     image: {
       src: '/projects/church-directory.webp',
-      alt: 'Individuals page of the Church Directory app in Excel, showing one sample leader profile with photo, contact details, groups, and large action buttons.',
+      label: 'Leader profile',
+      alt: 'Individuals page of the Church Directory app in Excel, showing a sample leader profile with photo, contact details, groups, and large action buttons.',
     },
+    gallery: [
+      {
+        src: '/projects/church-groups.webp',
+        label: 'Group roster',
+        alt: 'Groups page listing all ten groups with member counts and a roster of member cards with photos for the Youth Ministry Council.',
+      },
+      {
+        src: '/projects/church-edit.webp',
+        label: 'VBA edit form',
+        alt: 'VBA Edit Individual form open over the directory, with fields for name, position, church, contact details, and a photo.',
+      },
+    ],
     imageNote: RECREATED,
   },
   {
@@ -191,8 +226,21 @@ export const projects: Project[] = [
     role: 'Solo developer: workbook design, formulas, audit and delivery',
     image: {
       src: '/projects/budget-dashboard.webp',
+      label: 'Summary dashboard',
       alt: 'Summary Dashboard of the budget tracker in Excel: year-to-date budget, actuals, and variance by category with status flags and a quarterly chart, using sample numbers.',
     },
+    gallery: [
+      {
+        src: '/projects/budget-march.webp',
+        label: 'Monthly actuals',
+        alt: 'March monthly tab with yellow input cells for actuals by line item, budget pulled from the Budget Master, and variance with notes.',
+      },
+      {
+        src: '/projects/budget-rollup.webp',
+        label: 'Quarterly roll-up',
+        alt: 'Quarterly Roll-Up tab summing January to March by category, beside an Excel chart of Q1 expenses, budget versus actual.',
+      },
+    ],
     imageNote: RECREATED,
   },
   {
@@ -227,8 +275,21 @@ export const projects: Project[] = [
     role: 'Migration specialist: diagnosis, export, cleanup scripting and sync setup',
     image: {
       src: '/projects/obsidian-migration.webp',
+      label: 'Recovered vault',
       alt: 'The recovered Obsidian vault: 38 restored sections in the file explorer, a cleaned note open in the editor, and Obsidian Sync showing all 680 notes synced.',
     },
+    gallery: [
+      {
+        src: '/projects/obsidian-graph.webp',
+        label: 'Graph view',
+        alt: 'Obsidian graph view of the recovered vault, with notes clustered by section and color-coded groups.',
+      },
+      {
+        src: '/projects/obsidian-cleanup.webp',
+        label: 'Cleanup script',
+        alt: 'The Python cleanup script in VS Code, with terminal output: 659 headers fixed, 59 filenames repaired, and 91 duplicate images removed.',
+      },
+    ],
     imageNote: RECREATED,
   },
 ]

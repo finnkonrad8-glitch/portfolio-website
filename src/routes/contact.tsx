@@ -14,7 +14,7 @@ export const Route = createFileRoute('/contact')({
 
 const checklist = [
   'How the process works today, step by step',
-  'The tools you already use (Excel, Sheets, Gmail, your website…)',
+  'The tools you already use (your website, Gmail, Sheets, Excel…)',
   'What “done” looks like for you',
 ]
 

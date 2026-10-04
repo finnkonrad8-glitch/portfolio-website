@@ -121,9 +121,9 @@ export function HeroRotator({ headingId }: { headingId: string }) {
         className="font-display text-[2.6rem] leading-[0.98] font-extrabold tracking-tight sm:text-6xl lg:text-[4.1rem]"
       >
         <span className="sr-only">
-          I build the systems small businesses run on: Excel and Google Sheets
-          tools, API and email automations, apps, accessible websites, brand
-          kits, and Obsidian knowledge vaults.
+          I build the systems small businesses run on: websites, brand kits and
+          ebooks, workflow and email automations, Google Sheets and Excel tools,
+          apps, and Obsidian knowledge vaults.
         </span>
         <span aria-hidden className="block">
           I build

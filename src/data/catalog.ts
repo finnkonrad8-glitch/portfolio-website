@@ -1,12 +1,19 @@
 // Plain-text data (no icons or React), so the chat assistant in convex/ can
 // import it too. Icons are added in services.ts for the UI.
 
+// Order matters: it is the order visitors see everywhere (web first).
 export const serviceList = [
   {
-    id: 'spreadsheets',
-    title: 'Spreadsheet Systems',
+    id: 'websites',
+    title: 'Websites',
     description:
-      'Excel and Google Sheets tools powered by VBA and Apps Script that take repetitive, manual work off your plate.',
+      'Responsive websites and online stores on WordPress, Shopify, and Wix, designed to convert and easy for you to update.',
+  },
+  {
+    id: 'design',
+    title: 'Brand Kits, Ebooks & Workbooks',
+    description:
+      'Polished brand kits, ebooks, and workbooks designed in Canva, ready to publish and easy for you to update.',
   },
   {
     id: 'automation',
@@ -15,28 +22,22 @@ export const serviceList = [
       'Your tools talking to each other: Samsara, Motive, Google Maps, WhatsApp, n8n, Zapier, and Make, wired into one flow.',
   },
   {
-    id: 'apps',
-    title: 'App Development',
-    description:
-      'Desktop apps built in Excel VBA and web apps built in Bubble, so your team works in clean screens instead of raw grids.',
-  },
-  {
-    id: 'websites',
-    title: 'Websites',
-    description:
-      'Responsive websites and online stores on WordPress, Shopify, and Wix, designed to convert and easy for you to update.',
-  },
-  {
     id: 'email',
     title: 'Email Automations',
     description:
       'Automated email flows that handle the follow-up for you, so leads and clients never slip through the cracks.',
   },
   {
-    id: 'design',
-    title: 'Brand Kits, Ebooks & Workbooks',
+    id: 'spreadsheets',
+    title: 'Spreadsheet Systems',
     description:
-      'Polished brand kits, ebooks, and workbooks designed in Canva, ready to publish and easy for you to update.',
+      'Excel and Google Sheets tools powered by VBA and Apps Script that take repetitive, manual work off your plate.',
+  },
+  {
+    id: 'apps',
+    title: 'App Development',
+    description:
+      'Desktop apps built in Excel VBA and web apps built in Bubble, so your team works in clean screens instead of raw grids.',
   },
   {
     id: 'accessibility',
@@ -65,7 +66,7 @@ export const process = [
     step: '02',
     title: 'Build the system',
     description:
-      'I design and build the spreadsheet, automation, or site around the way you and your team actually work.',
+      'I design and build the site, automation, or spreadsheet around the way you and your team actually work.',
   },
   {
     step: '03',
@@ -76,11 +77,7 @@ export const process = [
 ]
 
 export const toolkit = [
-  'Microsoft Excel',
-  'Google Sheets',
-  'Samsara & Motive APIs',
-  'Google Maps API',
-  'WhatsApp',
+  'ADA & AODA',
   'n8n',
   'Zapier',
   'Make',
@@ -90,9 +87,13 @@ export const toolkit = [
   'Systeme.io',
   'Apollo',
   'Clay',
-  'Fillable PDFs',
-  'ADA & AODA',
+  'WhatsApp',
+  'Google Maps API',
+  'Samsara & Motive APIs',
+  'Microsoft Excel',
+  'Google Sheets',
   'Python (openpyxl)',
+  'Fillable PDFs',
 ]
 
 export const workingStyle = [

@@ -89,28 +89,29 @@ export function Hero() {
   )
 }
 
+// Same order as the services: web, design, automation, then spreadsheets.
 const chips = [
   {
-    label: '=XLOOKUP(id, A:A, C:C)',
+    label: '</> Shopify · WordPress',
     className: 'top-[6%] left-0 sm:left-[2%]',
     delay: 0,
   },
   {
-    label: 'function onEdit(e) {…}',
-    className: 'top-[30%] right-0 sm:right-[-2%]',
+    label: 'Brand kit · Canva',
+    className: 'top-[-2%] right-[14%] hidden sm:flex',
+    delay: 1800,
+  },
+  {
+    label: 'New lead → CRM → Email',
+    className: 'top-[30%] right-0 sm:right-[-4%]',
     delay: 1200,
   },
   {
-    label: 'Sub AutoReport()',
-    className: 'bottom-[24%] left-0 sm:left-[-2%]',
+    label: '=XLOOKUP(id, A:A, C:C)',
+    className: 'bottom-[24%] left-0 sm:left-[-4%]',
     delay: 2400,
   },
   { label: 'WCAG 2.1 AA ✓', className: 'bottom-[4%] right-[4%]', delay: 3600 },
-  {
-    label: '[[Second Brain]]',
-    className: 'top-[-2%] right-[16%] hidden sm:flex',
-    delay: 1800,
-  },
 ]
 
 function HeroVisual() {

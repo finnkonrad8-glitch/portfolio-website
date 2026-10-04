@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div>
           <Logo />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            {site.tagline}. Spreadsheets, websites, and automations that turn
+            {site.tagline}. Websites, automations, and spreadsheets that turn
             messy, manual work into systems that just work.
           </p>
         </div>

@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ProjectSlides } from '@/components/projects/project-slides'
 import { Tag } from '@/components/shared/tag'
 import type { Project } from '@/data/projects'
 import { cn } from '@/lib/utils'
@@ -10,11 +11,14 @@ export function ProjectCard({
   project,
   headingLevel: Heading = 'h3',
   featured = false,
+  slideOffset = 0,
 }: {
   project: Project
   headingLevel?: 'h2' | 'h3'
   /** Wide layout: image beside the text on large screens. */
   featured?: boolean
+  /** Staggers the screenshot carousels so cards don't all change at once. */
+  slideOffset?: number
 }) {
   const extraTags = project.tags.length - MAX_TAGS
   const metrics = project.metrics.slice(0, featured ? 3 : 2)
@@ -32,14 +36,11 @@ export function ProjectCard({
           featured && 'lg:aspect-auto lg:min-h-full lg:border-r lg:border-b-0',
         )}
       >
-        <img
-          src={project.image.src}
-          alt={project.image.alt}
-          loading="lazy"
-          decoding="async"
-          width={1600}
-          height={1000}
-          className="size-full object-cover object-left-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+        <ProjectSlides
+          images={[project.image, ...(project.gallery ?? [])]}
+          title={project.title}
+          slug={project.slug}
+          offset={slideOffset}
         />
       </div>
 

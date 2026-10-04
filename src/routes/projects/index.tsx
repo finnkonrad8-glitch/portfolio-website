@@ -24,7 +24,7 @@ function ProjectsPage() {
               as="h1"
               eyebrow="Projects"
               title="Real client work: messy processes, made to just work."
-              description="Dispatch hubs, desktop apps, financial dashboards, digital products, and knowledge vaults. Each case study covers the problem, what I built, and what changed for the client."
+              description="Dispatch automations, branded digital products, desktop apps, financial dashboards, and knowledge vaults. Each case study covers the problem, what I built, and what changed for the client."
             />
           </div>
         </div>
@@ -42,6 +42,7 @@ function ProjectsPage() {
                 project={project}
                 headingLevel="h2"
                 featured={index === 0}
+                slideOffset={index * 1700}
               />
             </li>
           ))}

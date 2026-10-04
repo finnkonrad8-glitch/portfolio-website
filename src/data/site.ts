@@ -7,9 +7,9 @@ export const site = {
   tagline: 'Built for Business Growth',
   roles: [
     'Full-Stack Developer',
+    'UI/UX Designer',
     'Automation Specialist',
     'Spreadsheet Expert',
-    'UI/UX Designer',
   ],
   fiverr: {
     url: 'https://www.fiverr.com/tolexpert87',
@@ -32,15 +32,15 @@ export const navLinks = [
 ] as const
 
 export const bio = [
-  'Hi, my name is Iyodo Oluwatosin (Tolex). I build the systems small businesses run on: Excel and Google Sheets tools powered by VBA and Apps Script, websites and apps, and email automations that handle the follow-up for you.',
-  "I also design brand kits, ebooks, and workbooks in Canva, bring websites up to WCAG and ADA accessibility standards, and set up Obsidian vaults that turn scattered notes into a knowledge system you'll actually use.",
+  'Hi, my name is Iyodo Oluwatosin (Tolex). I build the systems small businesses run on: websites and apps, brand kits, ebooks, and workbooks designed in Canva, automations that handle the follow-up for you, and Excel and Google Sheets tools powered by VBA and Apps Script.',
+  "I also bring websites up to WCAG and ADA accessibility standards and set up Obsidian vaults that turn scattered notes into a knowledge system you'll actually use.",
   'Whatever the project, my favorite part is taking a messy, manual process and turning it into something that just works.',
 ]
 
 // Headline numbers from real projects (see src/data/projects.ts).
 export const stats = [
-  { value: '2,219', label: 'formulas audited to zero errors' },
-  { value: '60+', label: 'Apps Script functions in one dispatch system' },
-  { value: '680', label: 'notes recovered in one migration' },
   { value: '4', label: 'live API integrations in one build' },
+  { value: '60+', label: 'Apps Script functions in one dispatch system' },
+  { value: '2,219', label: 'formulas audited to zero errors' },
+  { value: '680', label: 'notes recovered in one migration' },
 ]

@@ -1,16 +1,17 @@
 import { LogoMark } from '@/components/brand/logo-mark'
 
 const items = [
-  'VBA',
-  'Apps Script',
-  'Microsoft Excel',
-  'Google Sheets',
   'Web Development',
-  'Email Automation',
+  'UI/UX Design',
   'Canva',
+  'Workflow Automation',
+  'Email Automation',
+  'Apps Script',
+  'Google Sheets',
+  'Microsoft Excel',
+  'VBA',
   'WCAG & ADA',
   'Obsidian',
-  'UI/UX Design',
 ]
 
 export function SkillsMarquee() {

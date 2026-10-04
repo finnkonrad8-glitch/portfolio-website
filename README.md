@@ -3,7 +3,7 @@
 My personal portfolio website built with Claude Code and Macaly Cloud, showcasing my professional background, skills, and projects.
 
 **Iyodo Oluwatosin (Tolex) · TolexTech · Built for Business Growth**
-Full-Stack Developer, Automation Specialist, Spreadsheet Expert, and UI/UX Designer.
+Full-Stack Developer, UI/UX Designer, Automation Specialist, and Spreadsheet Expert.
 
 ## Stack
 

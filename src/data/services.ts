@@ -37,14 +37,19 @@ export type HeroPhrase = { text: string; tag: string; icon: LucideIcon }
 /** Rotating hero headline: "I build …" */
 export const heroPhrases: HeroPhrase[] = [
   {
-    text: 'Excel dashboards that update themselves.',
-    tag: 'VBA · Excel',
-    icon: FileSpreadsheet,
+    text: 'websites that turn visitors into clients.',
+    tag: 'Web design · Shopify · WordPress',
+    icon: AppWindow,
   },
   {
-    text: 'Google Sheets that talk to your apps.',
-    tag: 'Apps Script · APIs',
-    icon: Braces,
+    text: 'brand kits, ebooks, and workbooks.',
+    tag: 'Canva design',
+    icon: Palette,
+  },
+  {
+    text: 'automations that run your busywork.',
+    tag: 'n8n · Zapier · Make',
+    icon: Workflow,
   },
   {
     text: 'follow-up emails that send themselves.',
@@ -52,19 +57,19 @@ export const heroPhrases: HeroPhrase[] = [
     icon: MailCheck,
   },
   {
+    text: 'Google Sheets that talk to your apps.',
+    tag: 'Apps Script · APIs',
+    icon: Braces,
+  },
+  {
+    text: 'Excel dashboards that update themselves.',
+    tag: 'VBA · Excel',
+    icon: FileSpreadsheet,
+  },
+  {
     text: 'apps that replace messy spreadsheets.',
     tag: 'App development',
     icon: Smartphone,
-  },
-  {
-    text: 'websites that everyone can use.',
-    tag: 'Web · WCAG 2.1 AA',
-    icon: AppWindow,
-  },
-  {
-    text: 'brand kits, ebooks, and workbooks.',
-    tag: 'Canva design',
-    icon: Palette,
   },
   {
     text: 'notes that become a second brain.',

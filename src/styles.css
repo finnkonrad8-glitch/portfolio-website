@@ -262,6 +262,80 @@ body {
   }
 }
 
+/* Project card slides: a curtain wipe with an accent scan line. */
+@keyframes slide-wipe-next {
+  from {
+    clip-path: inset(0 0 0 100%);
+    transform: scale(1.08);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-wipe-prev {
+  from {
+    clip-path: inset(0 100% 0 0);
+    transform: scale(1.08);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-recede-next {
+  to {
+    transform: scale(0.9) translateX(-6%);
+    filter: brightness(0.45) blur(2px);
+  }
+}
+
+@keyframes slide-recede-prev {
+  to {
+    transform: scale(0.9) translateX(6%);
+    filter: brightness(0.45) blur(2px);
+  }
+}
+
+@keyframes slide-scan-next {
+  from {
+    left: 100%;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  to {
+    left: 0%;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-scan-prev {
+  from {
+    left: 0%;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @keyframes vt-out {
   to {
     opacity: 0;
@@ -318,6 +392,36 @@ body {
   .hero-progress {
     transform-origin: left;
     animation: hero-progress 3400ms linear both;
+  }
+
+  .slide-in-next {
+    animation: slide-wipe-next 0.95s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .slide-in-prev {
+    animation: slide-wipe-prev 0.95s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .slide-out-next {
+    animation: slide-recede-next 0.95s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .slide-out-prev {
+    animation: slide-recede-prev 0.95s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .slide-scan-next {
+    animation: slide-scan-next 0.95s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .slide-scan-prev {
+    animation: slide-scan-prev 0.95s cubic-bezier(0.77, 0, 0.18, 1) both;
+  }
+
+  .slide-progress {
+    transform-origin: left;
+    animation: slide-progress var(--slide-duration, 5200ms) linear both;
+    animation-delay: var(--delay, 0ms);
   }
 
   .chat-in {

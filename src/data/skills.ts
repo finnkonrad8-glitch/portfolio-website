@@ -18,18 +18,11 @@ export type Skill = {
 
 export const coreSkills: Skill[] = [
   {
-    name: 'VBA',
+    name: 'Web Development',
     description:
-      'Macros, custom functions, and user forms that automate Excel workbooks from data entry to finished report.',
-    icon: FileSpreadsheet,
-    tags: ['Excel', 'Macros', 'UserForms'],
-  },
-  {
-    name: 'Apps Script',
-    description:
-      'Google Sheets and Workspace automations: custom menus, time-based triggers, Gmail sends, and integrations.',
-    icon: Braces,
-    tags: ['Google Sheets', 'APIs', 'Triggers', 'Gmail'],
+      'Website design and WCAG 2.1 AA, ADA, and AODA accessibility remediation for WordPress, Shopify, and Wix, plus web apps built in Bubble.',
+    icon: CodeXml,
+    tags: ['WordPress', 'Shopify', 'Wix', 'Bubble', 'WCAG 2.1 AA'],
   },
   {
     name: 'Canva',
@@ -39,11 +32,18 @@ export const coreSkills: Skill[] = [
     tags: ['Brand kits', 'Ebooks', 'Workbooks'],
   },
   {
-    name: 'Web Development',
+    name: 'Apps Script',
     description:
-      'Website design and WCAG 2.1 AA, ADA, and AODA accessibility remediation for WordPress, Shopify, and Wix, plus web apps built in Bubble.',
-    icon: CodeXml,
-    tags: ['WordPress', 'Shopify', 'Wix', 'Bubble', 'WCAG 2.1 AA'],
+      'Google Sheets and Workspace automations: custom menus, time-based triggers, Gmail sends, and integrations.',
+    icon: Braces,
+    tags: ['Google Sheets', 'APIs', 'Triggers', 'Gmail'],
+  },
+  {
+    name: 'VBA',
+    description:
+      'Macros, custom functions, and user forms that automate Excel workbooks from data entry to finished report.',
+    icon: FileSpreadsheet,
+    tags: ['Excel', 'Macros', 'UserForms'],
   },
   {
     name: 'Obsidian',
@@ -61,6 +61,11 @@ export const roleDetails = [
       'Websites and web apps built end to end, from interface to data.',
   },
   {
+    role: 'UI/UX Designer',
+    description:
+      'Clean, accessible interfaces plus brand assets designed in Canva.',
+  },
+  {
     role: 'Automation Specialist',
     description:
       'Email flows and scripts that run the repetitive work for you.',
@@ -69,10 +74,5 @@ export const roleDetails = [
     role: 'Spreadsheet Expert',
     description:
       'Excel and Google Sheets tools powered by VBA and Apps Script.',
-  },
-  {
-    role: 'UI/UX Designer',
-    description:
-      'Clean, accessible interfaces plus brand assets designed in Canva.',
   },
 ]

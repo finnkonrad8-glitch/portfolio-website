@@ -31,7 +31,11 @@ export function FeaturedProjects() {
             key={project.slug}
             className={index === 0 ? 'reveal md:col-span-2' : 'reveal'}
           >
-            <ProjectCard project={project} featured={index === 0} />
+            <ProjectCard
+              project={project}
+              featured={index === 0}
+              slideOffset={index * 1700}
+            />
           </li>
         ))}
       </ul>
