@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harbor Hope Foundation · Food security for every neighbour (concept)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concepts/assets/concept.css">
+<style>
+:root{--bg:#fbf7f0;--fg:#14302e;--muted:#5a6b68;--line:rgba(20,48,46,.12);--surface:#fff;--accent:#f0644a;--accent-fg:#fff;--teal:#0f5c57;--font-display:Newsreader,serif;--font-body:'Work Sans',sans-serif}
+.site-header{background:#fbf7f0e6}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:26px;font-weight:600}
+.logo svg{flex:none}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:0;min-height:700px;margin:0 24px;border-radius:32px;overflow:hidden;background:var(--teal);color:#fff}
+.hero .l{position:relative;overflow:hidden}
+.hero .l::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b3b38f2,#0b3b3800 55%)}
+.hero .l .copy{position:absolute;z-index:2;left:56px;right:56px;bottom:56px}
+.hero h1{font-size:clamp(52px,5.6vw,86px);font-weight:500;line-height:1.02}
+.hero h1 em{color:#ffc9b8}
+.hero .l p{color:#d7e6e3;font-size:18px;max-width:520px;margin-top:20px}
+.donate{padding:50px 46px;display:flex;flex-direction:column;justify-content:center}
+.donate h2{font-family:var(--font-display);font-size:34px;font-weight:500;line-height:1.15}
+.goal{margin-top:26px}
+.goal .nums{display:flex;justify-content:space-between;font-size:14px;color:#cfe1de}
+.goal .nums b{font-size:24px;color:#fff}
+.track{height:12px;border-radius:6px;background:#ffffff26;margin-top:10px;overflow:hidden}
+.track i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#ffc9b8,var(--accent));transition:width 2s .4s var(--ease)}
+.freq{display:grid;grid-template-columns:1fr 1fr;background:#ffffff1a;border-radius:14px;padding:5px;margin-top:28px}
+.freq button{border:0;background:transparent;padding:12px;border-radius:10px;font-weight:600;cursor:pointer;color:#fff}
+.freq button.on{background:#fff;color:var(--teal)}
+.amounts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.amounts button{border:1.5px solid #ffffff40;background:transparent;color:#fff;padding:16px 0;border-radius:14px;font-weight:700;font-size:18px;cursor:pointer;transition:all .3s}
+.amounts button.on{background:var(--accent);border-color:var(--accent)}
+.impact-note{margin-top:16px;font-size:14px;color:#cfe1de;display:flex;gap:10px;align-items:center}
+.donate .btn{margin-top:22px;width:100%;padding:19px}
+.secure{text-align:center;font-size:13px;color:#a9c6c2;margin-top:12px}
+.counters{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:80px 0 30px}
+.counters b{display:block;font-family:var(--font-display);font-size:60px;font-weight:500;color:var(--teal);line-height:1}
+.counters span{color:var(--muted)}
+.h2{font-size:clamp(42px,4.6vw,66px);font-weight:500;line-height:1.05}
+.h2 em{color:var(--accent)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px}
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.prog{background:#fff;border-radius:26px;overflow:hidden;border:1px solid var(--line)}
+.prog .ph{height:250px}
+.prog .body{padding:26px 28px 30px}
+.prog small{font-weight:700;letter-spacing:.12em;font-size:12px;color:var(--accent);text-transform:uppercase}
+.prog h3{font-family:var(--font-display);font-size:30px;font-weight:500;margin-top:6px}
+.prog p{color:var(--muted);margin-top:8px}
+.prog .stat{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-weight:600;color:var(--teal)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.story .pic{height:600px;border-radius:30px;overflow:hidden;position:relative}
+.story .tagline{position:absolute;right:24px;bottom:24px;background:#fff;border-radius:18px;padding:16px 18px;max-width:240px;font-size:14px;box-shadow:0 30px 60px -30px #0006}
+.story blockquote{font-family:var(--font-display);font-size:34px;line-height:1.3;margin-top:22px}
+.story p{color:var(--muted);margin-top:20px;font-size:17px}
+.events{display:grid;grid-template-columns:1fr 1.1fr;gap:30px}
+.vol{background:var(--accent);color:#fff;border-radius:30px;padding:56px;position:relative;overflow:hidden}
+.vol h2{font-family:var(--font-display);font-size:52px;font-weight:500;line-height:1.05}
+.vol p{margin:16px 0 30px;color:#ffe3dc;max-width:380px}
+.vol .btn{background:#fff;color:var(--accent)}
+.vol .rings{position:absolute;right:-70px;bottom:-70px;width:260px;height:260px;border-radius:50%;border:2px dashed #ffffff66}
+.list{background:#fff;border-radius:30px;padding:30px 40px;border:1px solid var(--line)}
+.ev{display:grid;grid-template-columns:76px 1fr auto;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+.ev:last-child{border-bottom:0}
+.date{background:var(--bg);border-radius:16px;text-align:center;padding:10px 0;font-weight:700;color:var(--teal)}
+.date b{display:block;font-family:var(--font-display);font-size:30px;line-height:1}
+.ev h3{font-size:18px}.ev p{color:var(--muted);font-size:14px}
+.ev a{font-weight:700;color:var(--accent);font-size:14px}
+.partners{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:40px 0;color:#94a3a0;font-family:var(--font-display);font-size:26px;font-weight:600;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+footer{padding:60px 0 40px;color:var(--muted);font-size:14px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.hero{grid-template-columns:1fr;margin:0 12px}.hero .l{height:520px}.hero .l .copy{left:24px;right:24px;bottom:28px}.donate{padding:34px 24px}
+.counters,.programs,.story,.events{grid-template-columns:1fr 1fr}.programs,.story,.events{grid-template-columns:1fr}.story .pic{height:420px}.vol{padding:36px 26px}.vol h2{font-size:38px}.list{padding:20px 22px}.head{flex-direction:column;align-items:flex-start}.partners{font-size:20px}}
+</style>
+</head>
+<body>
+{{bar}}
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="#"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="#0f5c57"/><path d="M9 19c2.7-1.8 5.3-1.8 8 0s5.3 1.8 8 0M17 8v11m-4-7h8" stroke="#ffc9b8" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>Harbor Hope</a>
+    <nav class="nav-links"><a href="#programs">Our work</a><a href="#story">Stories</a><a href="#volunteer">Volunteer</a><a href="#">About</a></nav>
+    <a class="btn btn-primary" href="#donate">Donate now <span class="arrow">♥</span></a>
+  </div>
+</header>
+
+<section class="hero" id="donate">
+  <div class="l"><img class="cover kenburns" src="{{img:harbor-hero}}" alt="Volunteers packing boxes of fresh food"><div class="copy"><p class="eyebrow" style="color:#ffc9b8">Food security · Since 2011</p><h1 class="display" data-split style="margin-top:14px">No neighbour should go to bed <em>hungry.</em></h1><p class="reveal" style="--d:600ms">We rescue good food, cook warm meals and deliver groceries to families across the city, with dignity and no paperwork.</p></div></div>
+  <form class="donate reveal" style="--d:300ms" data-bars>
+    <h2>Help us reach our winter goal</h2>
+    <div class="goal"><div class="nums"><span><b>$68,420</b> raised</span><span>of $100,000</span></div><div class="track"><i data-width="68%"></i></div></div>
+    <div class="freq" data-choices><button type="button" class="on">Monthly</button><button type="button">One time</button></div>
+    <div class="amounts" data-choices><button type="button">$25</button><button type="button" class="on">$50</button><button type="button">$100</button><button type="button">Other</button></div>
+    <div class="impact-note"><span class="pulse-dot" style="color:#ffc9b8"></span>$50 a month feeds a family of four for a week.</div>
+    <button class="btn btn-primary" type="submit">Donate $50 monthly</button>
+    <p class="secure">Secure checkout · Tax receipt sent by email</p>
+  </form>
+</section>
+
+<div class="wrap counters">
+  <div class="reveal"><b data-count="1.2" data-suffix="M">0</b><span>meals served</span></div>
+  <div class="reveal" style="--d:100ms"><b data-count="3400" data-suffix="+">0</b><span>families each month</span></div>
+  <div class="reveal" style="--d:200ms"><b data-count="640">0</b><span>active volunteers</span></div>
+  <div class="reveal" style="--d:300ms"><b data-count="92" data-suffix="%">0</b><span>of every dollar to programs</span></div>
+</div>
+
+<section class="section" id="programs" style="padding-top:60px">
+  <div class="wrap">
+    <div class="head"><h2 class="display h2" data-split>Three ways we <em>show up.</em></h2><a class="btn btn-ghost reveal" href="#">Our impact report</a></div>
+    <div class="programs">
+      <article class="prog lift reveal"><div class="ph zoom img-reveal"><img class="cover" src="{{img:harbor-p1}}" alt="Fresh vegetables from a community garden"></div><div class="body"><small>Grow</small><h3>Community gardens</h3><p>Six neighbourhood gardens where families grow, learn and share fresh produce.</p><div class="stat">18 tonnes harvested last year</div></div></article>
+      <article class="prog lift reveal" style="--d:120ms"><div class="ph zoom img-reveal" style="--d:120ms"><img class="cover" src="{{img:harbor-p2}}" alt="Volunteer delivering a box of groceries"></div><div class="body"><small>Deliver</small><h3>Doorstep groceries</h3><p>Weekly grocery boxes for seniors and families who can't get to a food bank.</p><div class="stat">1,100 boxes every week</div></div></article>
+      <article class="prog lift reveal" style="--d:240ms"><div class="ph zoom img-reveal" style="--d:240ms"><img class="cover" src="{{img:harbor-p3}}" alt="Children eating a healthy school lunch"></div><div class="body"><small>Nourish</small><h3>School lunch club</h3><p>Hot, healthy lunches in 14 schools so no child learns on an empty stomach.</p><div class="stat">2,600 lunches a day</div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="story" style="padding-top:0">
+  <div class="wrap story">
+    <div class="pic img-reveal"><img class="cover" src="{{img:harbor-story}}" alt="Volunteer packing groceries with a smile"><div class="tagline float"><b>Every Saturday</b><br>120 volunteers pack 2,000 meals in four hours.</div></div>
+    <div><p class="eyebrow reveal">A story from the kitchen</p><blockquote class="reveal">“When my hours were cut, Harbor Hope kept dinner on our table. Now I volunteer every Saturday to pay it forward.”</blockquote><p class="reveal">Sample story · Volunteer and former client</p><a class="btn btn-primary reveal" href="#" style="margin-top:28px">Read more stories <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<section class="wrap events" id="volunteer">
+  <div class="vol reveal"><span class="rings spin-slow"></span><h2>Give two hours. Feed a hundred people.</h2><p>Pack, cook, drive or garden. Shifts every day of the week, no experience needed.</p><a class="btn" href="#">Find a shift <span class="arrow">→</span></a></div>
+  <div class="list reveal" style="--d:150ms"><h3 class="eyebrow" style="margin:6px 0 6px">Upcoming events</h3>
+    <div class="ev"><div class="date"><b>15</b>NOV</div><div><h3>Saturday meal pack</h3><p>Warehouse on Dock Street · 9 AM to 1 PM</p></div><a href="#">Join</a></div>
+    <div class="ev"><div class="date"><b>22</b>NOV</div><div><h3>Harvest dinner fundraiser</h3><p>Old Town Hall · 6:30 PM</p></div><a href="#">Tickets</a></div>
+    <div class="ev"><div class="date"><b>06</b>DEC</div><div><h3>Winter coat and food drive</h3><p>All six gardens · All day</p></div><a href="#">Join</a></div>
+  </div>
+</section>
+
+<div class="wrap" style="margin-top:100px"><div class="partners reveal"><span>Greenleaf Grocers</span><span>Harbour Credit Union</span><span>City Bakers</span><span>Riverside Rotary</span><span>FreshRoute</span></div></div>
+
+<footer><div class="wrap foot"><span class="logo">Harbor Hope</span><span>Registered charity · 22 Dock Street</span><span>hello@harborhope.example</span></div></footer>
+<script src="/concepts/assets/concept.js" defer></script>
+<script>
+// Donate button follows the chosen amount and frequency.
+(() => {
+  const form = document.querySelector('.donate')
+  const btn = form.querySelector('button[type=submit]')
+  form.addEventListener('choice', () => {
+    const amt = form.querySelector('.amounts .on').textContent
+    const freq = form.querySelector('.freq .on').textContent === 'Monthly' ? ' monthly' : ''
+    btn.textContent = amt === 'Other' ? 'Choose an amount' : `Donate ${amt}${freq}`
+  })
+})()
+</script>
+</body>
+</html>

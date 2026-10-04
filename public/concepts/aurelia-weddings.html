@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aurelia · Wedding photography and film (concept)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concepts/assets/concept.css">
+<style>
+:root{--bg:#f7f3ec;--fg:#1b1917;--muted:#6f675e;--line:rgba(27,25,23,.14);--surface:#fffdf9;--accent:#a0794a;--accent-fg:#fff;--font-display:'Bodoni Moda',serif;--font-body:Jost,sans-serif}
+body{font-weight:400}
+.site-header{background:#f7f3ecd9}
+.nav{display:grid;grid-template-columns:1fr auto 1fr}
+.nav-links{gap:28px;font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+.nav .right{justify-self:end}
+.logo{font-family:var(--font-display);font-size:30px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;padding-left:.32em}
+.hero{position:relative;height:calc(100vh - 118px);min-height:680px;margin:0 32px;border-radius:4px;overflow:hidden;color:#fff}
+.hero img{position:absolute;inset:-4% 0 0;width:100%;height:104%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0008,#0000 55%),linear-gradient(90deg,#0005,#0000 50%)}
+.hero .copy{position:absolute;z-index:2;left:60px;bottom:64px;max-width:900px}
+.hero h1{font-size:clamp(70px,9vw,148px);font-weight:400;line-height:.92}
+.hero h1 em{font-weight:400}
+.hero .meta{position:absolute;z-index:2;right:60px;bottom:70px;text-align:right;font-size:13px;letter-spacing:.24em;text-transform:uppercase;line-height:2}
+.scroll{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);width:1px;height:46px;background:#fff6;overflow:hidden}
+.scroll::after{content:"";position:absolute;left:0;top:-46px;width:1px;height:46px;background:#fff;animation:drop 2s ease-in-out infinite}
+@keyframes drop{to{top:46px}}
+.intro{max-width:980px;margin:0 auto;text-align:center}
+.intro p.big{font-family:var(--font-display);font-size:clamp(34px,3.6vw,52px);line-height:1.25}
+.intro p.big em{color:var(--accent)}
+.sig{margin-top:30px;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.masonry{columns:3;column-gap:18px;margin-top:70px}
+.masonry figure{break-inside:avoid;margin-bottom:18px;overflow:hidden;position:relative}
+.masonry figure img{width:100%}
+.masonry figcaption{position:absolute;left:16px;bottom:14px;color:#fff;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:all .5s var(--ease)}
+.masonry figure:hover figcaption{opacity:1;transform:none}
+.masonry figure::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0007,transparent 50%);opacity:0;transition:opacity .5s}
+.masonry figure:hover::after{opacity:1}
+.h2{font-size:clamp(46px,5vw,80px);font-weight:400;line-height:1}
+.h2 em{color:var(--accent)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:60px}
+.step{padding:44px 40px 10px 0;border-right:1px solid var(--line)}
+.step+.step{padding-left:40px}.step:last-child{border-right:0}
+.step b{font-family:var(--font-display);font-size:68px;font-weight:400;color:var(--accent);line-height:1}
+.step h3{font-family:var(--font-display);font-size:30px;font-weight:400;margin-top:16px}
+.step p{color:var(--muted);margin-top:10px}
+.dark{background:#1b1917;color:#f7f3ec;padding:130px 0}
+.dark .muted{color:#b6ad9f}
+.pk{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#f7f3ec22;margin-top:60px}
+.pk article{background:#1b1917;padding:50px 40px;transition:background .5s}
+.pk article:hover{background:#25221f}
+.pk h3{font-family:var(--font-display);font-size:34px;font-weight:400}
+.pk .amt{font-family:var(--font-display);font-size:56px;margin:18px 0;color:#d9b88a}
+.pk ul{list-style:none;display:grid;gap:12px;color:#cfc6b8;margin-bottom:34px}
+.pk li{padding-left:22px;position:relative}.pk li::before{content:"";position:absolute;left:0;top:11px;width:10px;height:1px;background:#d9b88a}
+.pk .btn{border-radius:0;letter-spacing:.2em;text-transform:uppercase;font-size:12px;padding:16px 26px}
+.feature{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.feature .pic{overflow:hidden}
+.feature .txt{background:var(--surface);padding:90px 80px;display:flex;flex-direction:column;justify-content:center}
+.feature blockquote{font-family:var(--font-display);font-size:38px;line-height:1.3}
+.feature cite{display:block;margin-top:26px;font-style:normal;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.inquire{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:30px 26px}
+.form label{display:flex;flex-direction:column;gap:8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.form input,.form select,.form textarea{border:0;border-bottom:1px solid var(--fg);background:transparent;padding:10px 0;font-size:18px;letter-spacing:0;text-transform:none;color:var(--fg);outline:0;font-family:var(--font-body)}
+.form .full{grid-column:1/-1}
+.form .btn{border-radius:0;letter-spacing:.2em;text-transform:uppercase;font-size:12px;justify-self:start}
+.insta{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:100px}
+.insta div{aspect-ratio:1;overflow:hidden}
+footer{padding:60px 0 40px;text-align:center}
+footer .logo{font-size:40px}
+footer p{color:var(--muted);font-size:13px;letter-spacing:.22em;text-transform:uppercase;margin-top:14px}
+@media(max-width:900px){.nav{grid-template-columns:1fr auto}.nav .right{display:none}.logo{font-size:22px}
+.hero{margin:0 12px;min-height:600px}.hero .copy{left:24px;bottom:120px;right:24px}.hero .meta{left:24px;right:auto;bottom:30px;text-align:left}
+.masonry{columns:2}.steps,.pk,.feature,.inquire,.form{grid-template-columns:1fr}.step,.step+.step{padding:30px 0;border-right:0;border-bottom:1px solid var(--line)}
+.feature .pic{height:420px}.feature .txt{padding:50px 24px}.feature blockquote{font-size:28px}.insta{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="concept-bar" role="note"><span><b>Concept site</b> designed by TolexTech for Wix. Sample content; photos from Pexels.</span><a href="/#websites">Back to the portfolio</a></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <nav class="nav-links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#packages">Packages</a></nav>
+    <a class="logo" href="#">Aurelia</a>
+    <div class="right"><a class="btn btn-primary" href="#inquire" style="border-radius:0;letter-spacing:.2em;text-transform:uppercase;font-size:12px">Check your date</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-hero%3C/text%3E%3C/svg%3E" alt="Bride and groom walking through a field at golden hour" data-parallax="0.12">
+  <div class="copy"><h1 class="display" data-split>Love, as it <em>happened.</em></h1></div>
+  <div class="meta reveal" style="--d:700ms">Wedding photography &amp; film<br>Documentary · Editorial · Timeless</div>
+  <span class="scroll" aria-hidden="true"></span>
+</section>
+
+<section class="section">
+  <div class="wrap intro">
+    <p class="eyebrow reveal">Hello, we're Aurelia</p>
+    <p class="big reveal" style="margin-top:22px">We photograph weddings the way you'll want to remember them: <em>honest, warm and a little cinematic,</em> with every unplanned laugh in between.</p>
+    <p class="sig reveal">Booking 2026 and 2027 · Travel worldwide</p>
+  </div>
+  <div class="wrap" id="work">
+    <div class="masonry">
+      <figure class="img-reveal"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g1%3C/text%3E%3C/svg%3E" alt="Wedding rings on a linen napkin"><figcaption>The details</figcaption></figure>
+      <figure class="img-reveal" style="--d:100ms"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g2%3C/text%3E%3C/svg%3E" alt="Bride holding a bouquet of white flowers"><figcaption>Getting ready</figcaption></figure>
+      <figure class="img-reveal" style="--d:200ms"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g3%3C/text%3E%3C/svg%3E" alt="Guests dancing at a wedding reception"><figcaption>The party</figcaption></figure>
+      <figure class="img-reveal"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g4%3C/text%3E%3C/svg%3E" alt="Long wedding table with candles and flowers"><figcaption>Reception</figcaption></figure>
+      <figure class="img-reveal" style="--d:100ms"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g5%3C/text%3E%3C/svg%3E" alt="Couple embracing outdoors"><figcaption>Portraits</figcaption></figure>
+      <figure class="img-reveal" style="--d:200ms"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g6%3C/text%3E%3C/svg%3E" alt="Bride's veil blowing in the wind"><figcaption>Golden hour</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="display h2" data-split>From first hello to <em>heirloom album.</em></h2>
+    <div class="steps">
+      <div class="step reveal"><b>01</b><h3>A long chat</h3><p>We get to know you, your people and the day you have in mind, over coffee or a call.</p></div>
+      <div class="step reveal" style="--d:120ms"><b>02</b><h3>The day itself</h3><p>Two photographers, a gentle approach and a timeline we plan together so nothing is rushed.</p></div>
+      <div class="step reveal" style="--d:240ms"><b>03</b><h3>Your gallery</h3><p>A sneak peek in 72 hours, the full edited gallery in six weeks, and an album built to last.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="packages">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#d9b88a">Collections</p>
+    <h2 class="display h2" data-split style="margin-top:16px">Choose how much of the story <em style="color:#d9b88a">we tell.</em></h2>
+    <div class="pk">
+      <article class="reveal"><h3>The Vows</h3><div class="amt">$3,200</div><ul><li>6 hours of coverage</li><li>One lead photographer</li><li>Online gallery, 400+ images</li></ul><a class="btn btn-ghost" href="#inquire">Enquire</a></article>
+      <article class="reveal" style="--d:120ms"><h3>The Celebration</h3><div class="amt">$4,800</div><ul><li>9 hours, two photographers</li><li>Engagement session</li><li>Fine-art album, 30 pages</li></ul><a class="btn btn-primary" href="#inquire" style="background:#d9b88a;color:#1b1917">Most booked</a></article>
+      <article class="reveal" style="--d:240ms"><h3>The Story</h3><div class="amt">$7,400</div><ul><li>Full day, photo and film</li><li>Highlight film, 5 minutes</li><li>Two heirloom albums</li></ul><a class="btn btn-ghost" href="#inquire">Enquire</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="pic img-reveal"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-couple%3C/text%3E%3C/svg%3E" alt="Couple laughing together on their wedding day"></div>
+  <div class="txt reveal"><p class="eyebrow">Kind words</p><blockquote style="margin-top:20px">“We cried at the sneak peek. Every photo feels like we're back in that moment, and we barely noticed they were there.”</blockquote><cite>Sample client review</cite></div>
+</section>
+
+<section class="section" id="inquire">
+  <div class="wrap inquire">
+    <div><p class="eyebrow reveal">Check availability</p><h2 class="display h2" data-split style="margin-top:16px">Tell us about <em>your day.</em></h2><p class="muted reveal" style="margin-top:24px;font-size:17px">We reply within one business day with availability and a full price guide.</p></div>
+    <form class="form reveal" style="--d:150ms">
+      <label>Your names<input placeholder="Amara &amp; Daniel"></label>
+      <label>Email<input placeholder="you@email.com"></label>
+      <label>Wedding date<input placeholder="12 / 09 / 2026"></label>
+      <label>Venue<input placeholder="Venue or city"></label>
+      <label class="full">Collection<select><option>The Celebration</option><option>The Vows</option><option>The Story</option></select></label>
+      <label class="full">Anything else?<textarea rows="3" placeholder="Tell us what matters most to you"></textarea></label>
+      <button class="btn btn-primary" type="submit">Send enquiry</button>
+    </form>
+  </div>
+  <div class="wrap insta">
+    <div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g2%3C/text%3E%3C/svg%3E" alt=""></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g5%3C/text%3E%3C/svg%3E" alt=""></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g1%3C/text%3E%3C/svg%3E" alt=""></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g6%3C/text%3E%3C/svg%3E" alt=""></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g3%3C/text%3E%3C/svg%3E" alt=""></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eaurelia-g4%3C/text%3E%3C/svg%3E" alt=""></div>
+  </div>
+</section>
+
+<footer><a class="logo" href="#">Aurelia</a><p>Wedding photography &amp; film · @aurelia.weddings</p></footer>
+<script src="/concepts/assets/concept.js" defer></script>
+</body>
+</html>

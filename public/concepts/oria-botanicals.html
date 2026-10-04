@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oria Botanicals · Skin food from the shea tree (concept)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concepts/assets/concept.css">
+<style>
+:root{--bg:#f6efe8;--fg:#3a2a22;--muted:#7d685c;--line:rgba(58,42,34,.13);--surface:#fffaf5;--accent:#b4573a;--accent-fg:#fff;--blush:#efd9cc;--font-display:Cormorant,serif;--font-body:Outfit,sans-serif}
+.announce{background:var(--fg);color:#f6efe8;font-size:13px;letter-spacing:.06em;padding:10px 0}
+.announce .track span{padding:0 40px}
+.site-header{background:#f6efe8eb}
+.logo{font-family:var(--font-display);font-size:34px;font-weight:600;letter-spacing:.06em}
+.icons{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:500}
+.cart{position:relative;display:inline-flex;align-items:center;gap:8px}
+.cart b{min-width:22px;height:22px;border-radius:11px;background:var(--accent);color:#fff;font-size:12px;display:grid;place-items:center;padding:0 6px}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:720px;gap:0}
+.hero .copy{display:flex;flex-direction:column;justify-content:center;padding:60px 70px 60px max(32px,calc((100vw - 1240px)/2 + 32px))}
+.hero h1{font-size:clamp(60px,6.4vw,104px);font-weight:500;line-height:.95}
+.hero h1 em{color:var(--accent)}
+.hero p{font-size:19px;color:var(--muted);max-width:460px;margin:26px 0 34px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero .media{position:relative;overflow:hidden;border-radius:0 0 0 220px}
+.stamp{position:absolute;left:40px;top:40px;width:130px;height:130px;border-radius:50%;background:var(--surface);display:grid;place-items:center;text-align:center;font:600 12px/1.3 var(--font-body);letter-spacing:.12em;color:var(--accent);z-index:2}
+.stamp svg{position:absolute;inset:0}
+.mini{position:absolute;right:30px;bottom:30px;z-index:2;background:#fffaf5f0;backdrop-filter:blur(10px);border-radius:22px;padding:14px;display:flex;gap:14px;align-items:center;width:310px;box-shadow:0 30px 60px -30px #0007}
+.mini img{width:70px;height:70px;border-radius:14px;object-fit:cover}
+.mini b{font-family:var(--font-display);font-size:22px;display:block;line-height:1.1}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:44px 0;border-bottom:1px solid var(--line)}
+.perks div{display:flex;gap:14px;align-items:center;font-weight:500}
+.perks span{width:46px;height:46px;border-radius:50%;background:var(--blush);display:grid;place-items:center;color:var(--accent);flex:none}
+.h2{font-size:clamp(46px,5vw,76px);font-weight:500;line-height:1}
+.h2 em{color:var(--accent)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.prod{position:relative}
+.prod .ph{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:var(--blush)}
+.prod .ph img{position:absolute;inset:0;transition:opacity .7s var(--ease),transform 1.2s var(--ease)}
+.prod .ph img.alt{opacity:0;transform:scale(1.08)}
+.prod:hover .ph img.alt{opacity:1;transform:scale(1)}
+.prod .tag{position:absolute;left:14px;top:14px;z-index:2;background:var(--surface);font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px}
+.prod .add{position:absolute;left:14px;right:14px;bottom:14px;z-index:2;transform:translateY(130%);transition:transform .5s var(--ease);background:var(--fg);color:#fff;border:0;border-radius:14px;padding:14px;font-weight:600;cursor:pointer}
+.prod:hover .add{transform:none}
+.prod h3{font-family:var(--font-display);font-size:26px;font-weight:600;margin-top:16px;line-height:1.1}
+.prod .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px;color:var(--muted);font-size:15px}
+.prod .row b{color:var(--fg);font-size:17px}
+.stars{color:#c9853a;letter-spacing:2px;font-size:13px}
+.ingredient{display:grid;grid-template-columns:1.1fr .9fr;gap:0;background:var(--fg);color:#f6efe8;border-radius:40px;overflow:hidden}
+.ingredient .media{min-height:620px;position:relative}
+.ingredient .copy{padding:80px 70px;display:flex;flex-direction:column;justify-content:center}
+.ingredient .copy p{color:#d9c6b8;font-size:17px;margin-top:20px}
+.ing{display:grid;gap:14px;margin-top:34px}
+.ing div{display:flex;justify-content:space-between;border-bottom:1px solid #f6efe826;padding-bottom:14px}
+.ing b{font-family:var(--font-display);font-size:24px;font-weight:600}
+.bundle{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:var(--blush);border-radius:40px;padding:60px}
+.bundle .imgs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bundle .imgs div{aspect-ratio:1;border-radius:22px;overflow:hidden}
+.save{display:inline-block;background:var(--accent);color:#fff;font-weight:600;padding:6px 14px;border-radius:999px;font-size:13px}
+.bundle .price{font-family:var(--font-display);font-size:58px;font-weight:600;margin:14px 0}
+.bundle .price s{font-size:28px;color:var(--muted);margin-left:10px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:var(--surface);border-radius:26px;padding:32px;border:1px solid var(--line)}
+.rev p{font-family:var(--font-display);font-size:24px;line-height:1.3;margin-top:14px}
+.rev small{display:block;margin-top:18px;color:var(--muted)}
+.verified{color:#5c7d4f;font-weight:600}
+.news{text-align:center;padding:100px 0}
+.news form{display:flex;max-width:520px;margin:30px auto 0;border-bottom:1.5px solid var(--fg)}
+.news input{flex:1;border:0;background:transparent;padding:14px 4px;font-size:17px;outline:0}
+.news button{border:0;background:transparent;font-weight:600;cursor:pointer}
+footer{background:var(--fg);color:#d9c6b8;padding:60px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;font-size:14px}
+.pay{display:flex;gap:8px}.pay span{border:1px solid #f6efe840;border-radius:6px;padding:4px 8px;font-size:12px;font-weight:600}
+@media(max-width:900px){.hero,.ingredient,.bundle{grid-template-columns:1fr}.hero .copy{padding:60px 20px}.hero .media{height:520px;border-radius:0 0 0 120px}.mini{left:16px;right:16px;width:auto}
+.perks,.grid4{grid-template-columns:1fr 1fr}.reviews{grid-template-columns:1fr}.ingredient .media{min-height:380px}.ingredient .copy{padding:44px 26px}.bundle{padding:30px 20px}.head{flex-direction:column;align-items:flex-start}.prod .add{transform:none;position:static;width:100%;margin-top:10px}}
+</style>
+</head>
+<body>
+<div class="concept-bar" role="note"><span><b>Concept site</b> designed by TolexTech for Shopify. Sample content; photos from Pexels.</span><a href="/#websites">Back to the portfolio</a></div>
+<div class="announce marquee" style="--speed:30s"><div class="track"><span>Free shipping over $60</span><span>✦ Bundle and save 20%</span><span>✦ Plastic-free packaging</span><span>✦ 30-day happy-skin guarantee</span><span>Free shipping over $60</span><span>✦ Bundle and save 20%</span><span>✦ Plastic-free packaging</span><span>✦ 30-day happy-skin guarantee</span></div></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <nav class="nav-links"><a href="#shop">Shop</a><a href="#ingredients">Ingredients</a><a href="#bundle">Bundles</a><a href="#reviews">Reviews</a></nav>
+    <a class="logo" href="#">ORIA</a>
+    <div class="icons"><span>Search</span><span>Account</span><span class="cart">Bag <b data-cart-count>0</b></span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="copy">
+    <p class="eyebrow reveal">Botanical skincare</p>
+    <h1 class="display" data-split style="margin-top:18px">Skin food, from <em>the shea tree.</em></h1>
+    <p class="reveal" style="--d:500ms">Rich, clean formulas made with fair-trade shea butter and cold-pressed African oils. Gentle enough for every skin, every day.</p>
+    <div class="actions reveal" style="--d:650ms"><a class="btn btn-primary" href="#shop">Shop bestsellers <span class="arrow">→</span></a><a class="btn btn-ghost" href="#ingredients">Our ingredients</a></div>
+  </div>
+  <div class="media img-reveal">
+    <img class="cover kenburns" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-hero%3C/text%3E%3C/svg%3E" alt="Natural skincare products arranged with botanicals">
+    <div class="stamp spin-slow"><svg viewBox="0 0 130 130" aria-hidden="true"><defs><path id="o" d="M65,65 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"/></defs><text font-size="11" font-weight="600" letter-spacing="3.4" fill="#b4573a"><textPath href="#o">FAIR TRADE · VEGAN · CRUELTY FREE ·</textPath></text></svg>100%<br>natural</div>
+    <div class="mini float"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p1%3C/text%3E%3C/svg%3E" alt=""><div><b>Whipped Shea Butter</b><span class="stars">★★★★★</span> <small>2,140 reviews</small></div></div>
+  </div>
+</section>
+
+<div class="wrap perks">
+  <div class="reveal"><span>✿</span>Fair-trade shea from Ghana</div>
+  <div class="reveal" style="--d:100ms"><span>♺</span>Plastic-free packaging</div>
+  <div class="reveal" style="--d:200ms"><span>☼</span>Dermatologist tested</div>
+  <div class="reveal" style="--d:300ms"><span>♡</span>Never tested on animals</div>
+</div>
+
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="head"><h2 class="display h2" data-split>Bestsellers your skin <em>will thank you for.</em></h2><a class="btn btn-ghost reveal" href="#">Shop all 24</a></div>
+    <div class="grid4">
+      <article class="prod reveal"><div class="ph"><span class="tag">Bestseller</span><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p1%3C/text%3E%3C/svg%3E" alt="Jar of whipped shea body butter"><img class="cover alt" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p1b%3C/text%3E%3C/svg%3E" alt=""><button class="add" data-add>Add to bag · $28</button></div><h3>Whipped Shea Butter</h3><div class="row"><span class="stars">★★★★★</span><b>$28</b></div></article>
+      <article class="prod reveal" style="--d:100ms"><div class="ph"><span class="tag">New</span><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p2%3C/text%3E%3C/svg%3E" alt="Glass dropper bottle of face oil"><img class="cover alt" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p1b%3C/text%3E%3C/svg%3E" alt=""><button class="add" data-add>Add to bag · $34</button></div><h3>Baobab Glow Face Oil</h3><div class="row"><span class="stars">★★★★★</span><b>$34</b></div></article>
+      <article class="prod reveal" style="--d:200ms"><div class="ph"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p3%3C/text%3E%3C/svg%3E" alt="Handmade natural soap bars"><img class="cover alt" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p1b%3C/text%3E%3C/svg%3E" alt=""><button class="add" data-add>Add to bag · $12</button></div><h3>Black Soap Cleansing Bar</h3><div class="row"><span class="stars">★★★★☆</span><b>$12</b></div></article>
+      <article class="prod reveal" style="--d:300ms"><div class="ph"><span class="tag">Limited</span><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p4%3C/text%3E%3C/svg%3E" alt="Hibiscus lip balm and botanicals"><img class="cover alt" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p1b%3C/text%3E%3C/svg%3E" alt=""><button class="add" data-add>Add to bag · $9</button></div><h3>Hibiscus Lip Balm</h3><div class="row"><span class="stars">★★★★★</span><b>$9</b></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="ingredients">
+  <div class="ingredient reveal">
+    <div class="media img-reveal"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-ingredient%3C/text%3E%3C/svg%3E" alt="Raw shea butter and nuts"></div>
+    <div class="copy"><p class="eyebrow" style="color:#e2a58c">What's inside</p><h2 class="display h2" style="margin-top:14px">Three ingredients, <em style="color:#e2a58c">done right.</em></h2><p>We source directly from women's cooperatives and keep every formula short, so you know exactly what you're putting on your skin.</p>
+      <div class="ing"><div><b>Shea butter</b><span>Deep moisture, barrier repair</span></div><div><b>Baobab oil</b><span>Vitamin C glow, light finish</span></div><div><b>Hibiscus</b><span>Gentle exfoliation, soft skin</span></div></div></div>
+  </div>
+</section>
+
+<section class="section" id="bundle">
+  <div class="wrap bundle reveal">
+    <div class="imgs"><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p1%3C/text%3E%3C/svg%3E" alt="Shea butter"></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p2%3C/text%3E%3C/svg%3E" alt="Face oil"></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p3%3C/text%3E%3C/svg%3E" alt="Black soap"></div><div class="zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eoria-p4%3C/text%3E%3C/svg%3E" alt="Lip balm"></div></div>
+    <div><span class="save">Save 20%</span><h2 class="display h2" style="margin-top:16px">The Daily Ritual set</h2><p class="muted" style="margin-top:12px;font-size:17px">Cleanse, nourish, glow and protect. Our four bestsellers in one gift-ready box.</p><div class="price">$66<s>$83</s></div><button class="btn btn-primary" data-add>Add the set to bag</button></div>
+  </div>
+</section>
+
+<section class="section" id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 class="display h2" data-split>4.9 stars from <em>18,000 customers.</em></h2></div>
+    <div class="reviews">
+      <div class="rev lift reveal"><span class="stars">★★★★★</span><p>“My eczema patches are finally calm. The butter melts in and doesn't feel greasy at all.”</p><small><span class="verified">✓ Verified buyer</span> · Sample review</small></div>
+      <div class="rev lift reveal" style="--d:120ms"><span class="stars">★★★★★</span><p>“The face oil gave me that glow everyone asks about. Three bottles in and I'm not switching.”</p><small><span class="verified">✓ Verified buyer</span> · Sample review</small></div>
+      <div class="rev lift reveal" style="--d:240ms"><span class="stars">★★★★★</span><p>“Beautiful packaging, no plastic and it smells like a holiday. Bought the set for my sister too.”</p><small><span class="verified">✓ Verified buyer</span> · Sample review</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="news wrap"><h2 class="display h2" data-split>Join the <em>Oria circle.</em></h2><p class="muted reveal" style="margin-top:12px">10% off your first order, plus skin tips and early access to new drops.</p><form class="reveal"><input placeholder="Your email" aria-label="Email"><button type="submit">Subscribe →</button></form></section>
+
+<footer><div class="wrap foot"><span class="logo" style="color:#f6efe8">ORIA</span><span>Shipping · Returns · Wholesale · Contact</span><div class="pay"><span>VISA</span><span>MC</span><span>AMEX</span><span>PayPal</span><span>Shop Pay</span></div></div></footer>
+<script src="/concepts/assets/concept.js" defer></script>
+</body>
+</html>

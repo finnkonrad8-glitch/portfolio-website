@@ -7,8 +7,8 @@ export type Review = {
   rating: number
   breakdown?: { communication: number; quality: number; value: number }
   /**
-   * The client's exact words. The only edit allowed is swapping an old name
-   * for [Tolex], in square brackets so the change stays visible.
+   * The client's exact words. The only edit made is swapping an old account
+   * name for Tolex.
    */
   quote?: string
   /** Factual summary, shown without quotation marks, when no wording exists. */
@@ -44,7 +44,7 @@ export const reviews: Review[] = [
     rating: 4.7,
     breakdown: { communication: 5, quality: 5, value: 4 },
     quote:
-      "[Tolex] is excellent to work with. She communicates well and responds to her client's needs well. A pleasure working with her. I would do it again (and will)!",
+      "Tolex is excellent to work with. She communicates well and responds to her client's needs well. A pleasure working with her. I would do it again (and will)!",
     highlights: ['Level of cooperation', 'Professionalism of work'],
     source: 'Fiverr review',
     note: 'Earned on a previous Fiverr account',
@@ -92,7 +92,7 @@ export const reviews: Review[] = [
     project: '6/49 lottery generator',
     rating: 5,
     quote:
-      "[Tolex] your professionalism is astounding. I have closed and opened the generator and it's solid.",
+      "Tolex your professionalism is astounding. I have closed and opened the generator and it's solid.",
     source: 'Client message',
     consent: false,
   },

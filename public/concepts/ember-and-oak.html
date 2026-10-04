@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember &amp; Oak · Small-batch coffee roasters (concept)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concepts/assets/concept.css">
+<style>
+:root{--bg:#17110d;--fg:#f5ebe0;--muted:#b9a797;--line:rgba(245,235,224,.12);--surface:#211913;--accent:#e8743b;--accent-fg:#17110d;--cream:#f5ebe0;--font-display:'Bricolage Grotesque',sans-serif;--font-body:Inter,sans-serif}
+.site-header{background:#17110de0}
+.logo{font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo i{width:30px;height:30px;border-radius:50%;background:var(--accent);position:relative}
+.logo i::after{content:"";position:absolute;left:50%;top:5px;bottom:5px;width:2px;margin-left:-1px;background:var(--bg);border-radius:2px;transform:rotate(18deg)}
+.cart{display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.cart b{background:var(--accent);color:var(--bg);min-width:22px;height:22px;border-radius:11px;display:grid;place-items:center;font-size:12px}
+.hero{position:relative;padding:40px 0 0}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(64px,9.4vw,156px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .grid{display:grid;grid-template-columns:1.3fr .9fr;gap:30px;margin-top:40px;align-items:stretch}
+.hero .media{position:relative;border-radius:30px;overflow:hidden;min-height:520px}
+.hero .media .label{position:absolute;left:24px;bottom:24px;background:#17110dd9;backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:14px 18px;font-size:14px}
+.hero .media .label b{display:block;font-family:var(--font-display);font-size:22px}
+.steam{position:absolute;right:30px;top:30px;width:120px;height:120px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;text-align:center;font-weight:800;font-family:var(--font-display);line-height:1.05;font-size:18px}
+.builder{background:var(--cream);color:var(--bg);border-radius:30px;padding:34px}
+.builder h2{font-family:var(--font-display);font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.builder p.s{color:#6b5546;margin-top:6px}
+.builder .step{margin-top:22px}
+.builder .step span{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a6f5d}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.opts button{border:1.5px solid #17110d2e;background:transparent;padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer;font-size:14px;transition:all .3s}
+.opts button.on{background:var(--bg);color:var(--cream);border-color:var(--bg)}
+.total{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:22px;border-top:1px dashed #17110d33}
+.total b{font-family:var(--font-display);font-size:40px;font-weight:800}
+.total small{display:block;color:#6b5546;font-size:13px}
+.builder .btn{width:100%;margin-top:18px;background:var(--bg);color:var(--cream);padding:18px}
+.origins{padding:70px 0 20px;font-family:var(--font-display);font-weight:800;font-size:64px;text-transform:uppercase;letter-spacing:-.03em}
+.origins span{padding:0 26px;color:transparent;-webkit-text-stroke:1.5px #f5ebe066}
+.origins span.o{color:var(--accent);-webkit-text-stroke:0}
+.h2{font-family:var(--font-display);font-size:clamp(44px,5vw,78px);font-weight:800;letter-spacing:-.04em;line-height:.98}
+.h2 em{font-style:normal;color:var(--accent)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px}
+.shop{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.bag{background:var(--surface);border:1px solid var(--line);border-radius:26px;overflow:hidden}
+.bag .ph{aspect-ratio:1;position:relative}
+.bag .ph .roast{position:absolute;top:14px;left:14px;background:var(--bg);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700}
+.bag .body{padding:22px}
+.bag h3{font-family:var(--font-display);font-size:24px;font-weight:700;letter-spacing:-.02em}
+.bag .notes{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.bag .notes span{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+.level{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:12px;color:var(--muted)}
+.level .b{flex:1;height:6px;border-radius:3px;background:#f5ebe01a;overflow:hidden}
+.level .b i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f0b27a,var(--accent),#7a3a1b);border-radius:3px;transition:width 1.4s .3s var(--ease)}
+.bag .foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.bag .foot b{font-family:var(--font-display);font-size:24px}
+.bag .foot button{border:0;background:var(--accent);color:var(--bg);font-weight:700;padding:10px 16px;border-radius:12px;cursor:pointer}
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin-top:20px}
+.journey div{padding:40px 30px 0 0;position:relative}
+.journey div::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px #e8743b33}
+.journey b{font-family:var(--font-display);font-size:16px;color:var(--accent);letter-spacing:.06em}
+.journey h3{font-family:var(--font-display);font-size:30px;font-weight:700;margin-top:10px;letter-spacing:-.02em}
+.journey p{color:var(--muted);margin-top:8px}
+.guides{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:22px}
+.guide{position:relative;border-radius:26px;overflow:hidden;min-height:420px;display:flex;align-items:flex-end}
+.guide img{position:absolute;inset:0}
+.guide::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#17110df2,transparent 60%)}
+.guide div{position:relative;z-index:2;padding:28px}
+.guide small{color:var(--accent);font-weight:700;letter-spacing:.12em;font-size:12px}
+.guide h3{font-family:var(--font-display);font-size:30px;font-weight:700;margin-top:6px;letter-spacing:-.02em}
+footer{border-top:1px solid var(--line);margin-top:120px;padding:60px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:14px}
+@media(max-width:900px){.hero .grid,.guides{grid-template-columns:1fr}.hero .media{min-height:400px}.shop,.journey{grid-template-columns:1fr 1fr}.origins{font-size:40px}.head{flex-direction:column;align-items:flex-start}.steam{width:90px;height:90px;font-size:14px}.journey div{padding:30px 16px 20px 0}}
+</style>
+</head>
+<body>
+<div class="concept-bar" role="note"><span><b>Concept site</b> designed by TolexTech for Shopify. Sample content; photos from Pexels.</span><a href="/#websites">Back to the portfolio</a></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="#"><i></i>Ember &amp; Oak</a>
+    <nav class="nav-links"><a href="#shop">Shop coffee</a><a href="#sub">Subscriptions</a><a href="#journey">Our sourcing</a><a href="#brew">Brew guides</a></nav>
+    <span class="cart">Cart <b data-cart-count>0</b></span>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <h1 data-split>Roasted Tuesday. <em>At your door</em> Friday.</h1>
+  <div class="grid" id="sub">
+    <div class="media img-reveal"><img class="cover kenburns" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-hero%3C/text%3E%3C/svg%3E" alt="Freshly roasted coffee beans and a pour-over"><span class="steam spin-slow">FRESH<br>WEEKLY</span><div class="label float"><b>This week: Huila, Colombia</b>Red apple · panela · cacao</div></div>
+    <form class="builder reveal" style="--d:300ms" id="builder">
+      <h2>Build your subscription</h2><p class="s">Skip, swap or cancel anytime. Shipping is free.</p>
+      <div class="step"><span>1 · Coffee</span><div class="opts" data-choices data-key="coffee"><button type="button" class="on" data-price="19">Roaster's choice</button><button type="button" data-price="21">Single origin</button><button type="button" data-price="18">Espresso blend</button></div></div>
+      <div class="step"><span>2 · Grind</span><div class="opts" data-choices><button type="button" class="on">Whole bean</button><button type="button">Filter</button><button type="button">Espresso</button></div></div>
+      <div class="step"><span>3 · Bags per delivery</span><div class="opts" data-choices data-key="qty"><button type="button" data-qty="1">1 bag</button><button type="button" class="on" data-qty="2">2 bags</button><button type="button" data-qty="3">3 bags</button></div></div>
+      <div class="step"><span>4 · Every</span><div class="opts" data-choices><button type="button">Week</button><button type="button" class="on">2 weeks</button><button type="button">Month</button></div></div>
+      <div class="total"><div><small>Per delivery, 12% off retail</small><b id="price">$38</b></div><span style="font-weight:600;color:#6b5546">250 g bags</span></div>
+      <button class="btn" type="submit">Start my subscription</button>
+    </form>
+  </div>
+</section>
+
+<div class="marquee origins" style="--speed:36s" aria-hidden="true"><div class="track"><span>Colombia</span><span class="o">●</span><span>Ethiopia</span><span class="o">●</span><span>Rwanda</span><span class="o">●</span><span>Guatemala</span><span class="o">●</span><span>Kenya</span><span class="o">●</span><span>Colombia</span><span class="o">●</span><span>Ethiopia</span><span class="o">●</span><span>Rwanda</span><span class="o">●</span><span>Guatemala</span><span class="o">●</span><span>Kenya</span><span class="o">●</span></div></div>
+
+<section class="section" id="shop" style="padding-top:60px">
+  <div class="wrap">
+    <div class="head"><h2 class="h2" data-split>Coffees on the <em>roaster</em> this week.</h2><a class="btn btn-ghost reveal" href="#">Shop all coffee</a></div>
+    <div class="shop">
+      <article class="bag lift reveal" data-bars><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-b1%3C/text%3E%3C/svg%3E" alt="Bag of single-origin coffee"><span class="roast">Light</span></div><div class="body"><h3>Huila, Colombia</h3><div class="notes"><span>Red apple</span><span>Panela</span><span>Cacao</span></div><div class="level">Roast<span class="b"><i data-width="35%"></i></span></div><div class="foot"><b>$21</b><button data-add>Add</button></div></div></article>
+      <article class="bag lift reveal" style="--d:100ms" data-bars><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-b2%3C/text%3E%3C/svg%3E" alt="Coffee beans in a bowl"><span class="roast">Light</span></div><div class="body"><h3>Yirgacheffe, Ethiopia</h3><div class="notes"><span>Jasmine</span><span>Bergamot</span><span>Peach</span></div><div class="level">Roast<span class="b"><i data-width="25%"></i></span></div><div class="foot"><b>$23</b><button data-add>Add</button></div></div></article>
+      <article class="bag lift reveal" style="--d:200ms" data-bars><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-b3%3C/text%3E%3C/svg%3E" alt="Espresso being pulled into a cup"><span class="roast">Medium-dark</span></div><div class="body"><h3>Ember Espresso</h3><div class="notes"><span>Dark chocolate</span><span>Cherry</span><span>Toffee</span></div><div class="level">Roast<span class="b"><i data-width="72%"></i></span></div><div class="foot"><b>$18</b><button data-add>Add</button></div></div></article>
+      <article class="bag lift reveal" style="--d:300ms" data-bars><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-b4%3C/text%3E%3C/svg%3E" alt="Coffee beans spilling from a paper bag"><span class="roast">Medium</span></div><div class="body"><h3>Decaf Huehuetenango</h3><div class="notes"><span>Milk chocolate</span><span>Almond</span></div><div class="level">Roast<span class="b"><i data-width="55%"></i></span></div><div class="foot"><b>$20</b><button data-add>Add</button></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="journey" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2" data-split>From the farm <em>to your cup</em> in 21 days.</h2>
+    <div class="journey" style="margin-top:50px">
+      <div class="reveal"><b>DAY 1</b><h3>Direct trade</h3><p>We buy straight from farms we visit, paying well above market price.</p></div>
+      <div class="reveal" style="--d:120ms"><b>DAY 14</b><h3>Roasted small</h3><p>12 kg batches every Tuesday, profiled for each origin.</p></div>
+      <div class="reveal" style="--d:240ms"><b>DAY 15</b><h3>Rested &amp; packed</h3><p>Degassed for 24 hours, sealed in compostable bags.</p></div>
+      <div class="reveal" style="--d:360ms"><b>DAY 18</b><h3>At your door</h3><p>Carbon-neutral delivery, peak flavour on arrival.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="brew" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 class="h2" data-split>Brew it <em>like we do.</em></h2></div>
+    <div class="guides">
+      <a class="guide zoom img-reveal" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-g1%3C/text%3E%3C/svg%3E" alt="Pour-over coffee being brewed"><div><small>5 MIN · EASY</small><h3>The perfect pour-over</h3></div></a>
+      <a class="guide zoom img-reveal" style="--d:120ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-g2%3C/text%3E%3C/svg%3E" alt="French press coffee"><div><small>4 MIN · EASY</small><h3>French press, no sludge</h3></div></a>
+      <a class="guide zoom img-reveal" style="--d:240ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eember-g3%3C/text%3E%3C/svg%3E" alt="Latte art in a cup"><div><small>10 MIN · ADVANCED</small><h3>Café-style flat white</h3></div></a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap foot"><a class="logo" href="#"><i></i>Ember &amp; Oak</a><span>Roastery &amp; café · 9 Foundry Yard · Open daily 7 to 5</span><span>Free shipping on subscriptions</span></div></footer>
+<script src="/concepts/assets/concept.js" defer></script>
+<script>
+// Subscription price follows coffee and bag count.
+(() => {
+  const form = document.getElementById('builder')
+  const update = () => {
+    const each = +form.querySelector('[data-key=coffee] .on').dataset.price
+    const qty = +form.querySelector('[data-key=qty] .on').dataset.qty
+    document.getElementById('price').textContent = '$' + Math.round(each * qty * 0.88 * 100 / 100)
+  }
+  form.addEventListener('choice', update)
+  update()
+})()
+</script>
+</body>
+</html>

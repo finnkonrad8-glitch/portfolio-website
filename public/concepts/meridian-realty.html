@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian Realty · Homes, condos and investment property (concept)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concepts/assets/concept.css">
+<style>
+:root{--bg:#ffffff;--fg:#0f2236;--muted:#5d6b7c;--line:rgba(15,34,54,.1);--surface:#f4f6f9;--accent:#c39a5f;--accent-fg:#0f2236;--navy:#0f2236;--font-display:'DM Serif Display',serif;--font-body:Inter,sans-serif}
+.site-header{background:#fffffff2}
+.logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:26px}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--navy);display:grid;place-items:center;color:var(--accent);font-style:normal;font-size:20px}
+.top-actions{display:flex;gap:18px;align-items:center;font-weight:600;font-size:14px}
+.hero{position:relative;margin:0 24px;border-radius:30px;overflow:hidden;min-height:720px;color:#fff;display:flex;align-items:flex-end}
+.hero>img{position:absolute;inset:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0f2236f0 0%,#0f223666 45%,#0f223633)}
+.hero .inner{position:relative;z-index:2;width:100%;padding:0 60px 60px}
+.hero h1{font-size:clamp(56px,6.2vw,96px);font-weight:400;max-width:900px}
+.hero h1 em{color:var(--accent)}
+.hero p{color:#d5dce5;font-size:18px;max-width:560px;margin:20px 0 34px}
+.search{display:grid;grid-template-columns:auto 1.3fr 1fr 1fr auto;background:#fff;color:var(--fg);border-radius:20px;padding:8px;gap:0;max-width:1100px;box-shadow:0 30px 60px -30px #000}
+.tabs{display:flex;gap:4px;padding:6px;background:var(--surface);border-radius:14px;align-self:center;margin-right:8px}
+.tabs button{border:0;background:transparent;padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer}
+.tabs button.on{background:var(--navy);color:#fff}
+.search label{display:flex;flex-direction:column;padding:10px 22px;border-left:1px solid var(--line);font-size:12px;font-weight:600;color:var(--muted)}
+.search label span{font-size:16px;color:var(--fg);font-weight:600;margin-top:2px}
+.search .btn{border-radius:14px;background:var(--navy);color:#fff;box-shadow:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:56px 0;border-bottom:1px solid var(--line)}
+.stats b{display:block;font-family:var(--font-display);font-size:52px;font-weight:400;line-height:1}
+.stats span{color:var(--muted);font-size:15px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px}
+.h2{font-size:clamp(42px,4.4vw,64px);font-weight:400}
+.h2 em{color:var(--accent)}
+.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.listing{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.listing .ph{position:relative;height:270px}
+.badge{position:absolute;top:16px;left:16px;background:#fff;color:var(--fg);font-weight:700;font-size:12px;padding:7px 12px;border-radius:999px}
+.badge.gold{background:var(--accent)}
+.fav{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;background:#ffffffe6;display:grid;place-items:center;transition:transform .4s var(--ease)}
+.fav:hover{transform:scale(1.15)}
+.listing .body{padding:22px 24px 26px}
+.listing .price{font-family:var(--font-display);font-size:32px}
+.listing .addr{color:var(--muted);font-size:15px;margin-top:2px}
+.facts{display:flex;gap:18px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;font-weight:600}
+.facts span{display:flex;gap:6px;align-items:center}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--surface);border-radius:26px;padding:40px 36px;position:relative;overflow:hidden}
+.svc .num{font-family:var(--font-display);font-size:90px;color:#0f22360f;position:absolute;right:24px;top:6px;line-height:1}
+.svc h3{font-family:var(--font-display);font-size:32px;font-weight:400}
+.svc p{color:var(--muted);margin:12px 0 22px}
+.svc a{font-weight:700;font-size:14px;color:var(--navy);border-bottom:2px solid var(--accent);padding-bottom:3px}
+.hoods{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:260px 260px;gap:18px}
+.hood{position:relative;border-radius:24px;overflow:hidden;color:#fff}
+.hood:first-child{grid-row:span 2}
+.hood::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0f2236dd,transparent 60%)}
+.hood div{position:absolute;z-index:2;left:24px;bottom:22px}
+.hood b{font-family:var(--font-display);font-size:30px;font-weight:400;display:block}
+.hood span{font-size:14px;color:#d5dce5}
+.calc{display:grid;grid-template-columns:1fr 1fr;background:var(--navy);color:#fff;border-radius:32px;overflow:hidden}
+.calc .l{padding:70px 60px}
+.calc .r{background:#13293f;padding:60px;display:flex;flex-direction:column;justify-content:center}
+.calc label{display:block;margin-top:26px;font-size:14px;color:#aeb9c6}
+.calc input[type=range]{width:100%;accent-color:var(--accent);margin-top:12px}
+.calc .val{float:right;color:#fff;font-weight:700}
+.calc .pay{font-family:var(--font-display);font-size:84px;line-height:1;color:var(--accent)}
+.ring{width:170px;height:170px;margin-top:30px}
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.post .ph{height:230px;border-radius:20px}
+.post small{display:block;margin-top:18px;color:var(--accent);font-weight:700;letter-spacing:.1em;font-size:12px;text-transform:uppercase}
+.post h3{font-family:var(--font-display);font-size:26px;font-weight:400;margin-top:6px;line-height:1.2}
+footer{background:var(--navy);color:#cbd3dc;margin-top:120px;padding:70px 0 40px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;font-size:14px;margin-bottom:14px}
+footer li{list-style:none;margin:8px 0;font-size:14px}
+footer .logo{color:#fff}
+@media(max-width:900px){.hero{margin:0 12px;min-height:640px}.hero .inner{padding:0 22px 26px}.search{grid-template-columns:1fr}.tabs{margin:0 0 6px}.search label{border-left:0;border-top:1px solid var(--line)}
+.stats,.listings,.services,.calc,.posts,.fgrid{grid-template-columns:1fr 1fr}.listings,.services,.calc,.posts{grid-template-columns:1fr}.hoods{grid-template-columns:1fr 1fr;grid-template-rows:220px 180px 180px}.hood:first-child{grid-column:span 2;grid-row:auto}
+.head{flex-direction:column;align-items:flex-start}.calc .l,.calc .r{padding:40px 26px}.top-actions span{display:none}}
+</style>
+</head>
+<body>
+<div class="concept-bar" role="note"><span><b>Concept site</b> designed by TolexTech for WordPress. Sample content; photos from Pexels.</span><a href="/#websites">Back to the portfolio</a></div>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="#"><i>M</i>Meridian</a>
+    <nav class="nav-links"><a href="#listings">Buy</a><a href="#services">Sell</a><a href="#hoods">Neighbourhoods</a><a href="#calc">Mortgage</a><a href="#journal">Journal</a></nav>
+    <div class="top-actions"><span>(555) 010-4412</span><a class="btn btn-primary" href="#">Book a valuation</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="cover kenburns" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-hero%3C/text%3E%3C/svg%3E" alt="Modern family home lit up at dusk">
+  <div class="inner">
+    <p class="eyebrow reveal" style="color:var(--accent)">Independent brokerage · Est. 2008</p>
+    <h1 class="display" data-split style="margin-top:16px">Find the place you'll <em>call home.</em></h1>
+    <p class="reveal" style="--d:500ms">Hand-picked homes, honest advice and agents who know every street in the neighbourhoods they sell.</p>
+    <form class="search reveal" style="--d:650ms">
+      <div class="tabs" data-choices><button type="button" class="on">Buy</button><button type="button">Rent</button><button type="button">Sold</button></div>
+      <label>Location<span>Riverside, Old Town…</span></label>
+      <label>Property type<span>Any home</span></label>
+      <label>Price range<span>$400k to $900k</span></label>
+      <button class="btn" type="submit">Search homes</button>
+    </form>
+  </div>
+</section>
+
+<div class="wrap stats">
+  <div class="reveal"><b data-count="1240" data-suffix="+">0</b><span>homes sold</span></div>
+  <div class="reveal" style="--d:100ms"><b data-count="98" data-suffix="%">0</b><span>of asking price, on average</span></div>
+  <div class="reveal" style="--d:200ms"><b data-count="21" data-suffix=" days">0</b><span>average time to sell</span></div>
+  <div class="reveal" style="--d:300ms"><b data-count="4.9">0</b><span>rating from 600+ clients</span></div>
+</div>
+
+<section class="section" id="listings">
+  <div class="wrap">
+    <div class="head"><div><p class="eyebrow">Featured listings</p><h2 class="display h2" data-split style="margin-top:12px">New this week in <em>Riverside.</em></h2></div><a class="btn btn-ghost reveal" href="#">View all 86 homes <span class="arrow">→</span></a></div>
+    <div class="listings">
+      <article class="listing lift reveal"><div class="ph zoom img-reveal"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-l1%3C/text%3E%3C/svg%3E" alt="Modern two-storey home with large windows"><span class="badge">New</span><span class="fav">♡</span></div><div class="body"><div class="price">$849,000</div><div class="addr">18 Willow Crescent, Riverside</div><div class="facts"><span>4 beds</span><span>3 baths</span><span>2,480 sq ft</span></div></div></article>
+      <article class="listing lift reveal" style="--d:120ms"><div class="ph zoom img-reveal" style="--d:120ms"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-l2%3C/text%3E%3C/svg%3E" alt="Bright open-plan living room"><span class="badge gold">Open house Sat</span><span class="fav">♡</span></div><div class="body"><div class="price">$615,000</div><div class="addr">Suite 1204, The Harbourline</div><div class="facts"><span>2 beds</span><span>2 baths</span><span>1,120 sq ft</span></div></div></article>
+      <article class="listing lift reveal" style="--d:240ms"><div class="ph zoom img-reveal" style="--d:240ms"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-l3%3C/text%3E%3C/svg%3E" alt="Family house with a green garden"><span class="badge">Price drop</span><span class="fav">♡</span></div><div class="body"><div class="price">$729,500</div><div class="addr">7 Orchard Lane, Old Town</div><div class="facts"><span>3 beds</span><span>2 baths</span><span>1,940 sq ft</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 class="display h2" data-split>However you're moving, <em>we've got you.</em></h2></div>
+    <div class="services">
+      <div class="svc lift reveal"><span class="num">01</span><h3>Buying</h3><p>Early access to off-market homes, negotiation that saves you money and a team with you through closing.</p><a href="#">Start your search</a></div>
+      <div class="svc lift reveal" style="--d:120ms"><span class="num">02</span><h3>Selling</h3><p>Professional staging, photography and a launch plan that brings serious buyers in the first week.</p><a href="#">Get a free valuation</a></div>
+      <div class="svc lift reveal" style="--d:240ms"><span class="num">03</span><h3>Renting</h3><p>Vetted tenants, fair leases and property management that keeps your investment stress-free.</p><a href="#">Talk to our team</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="hoods" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 class="display h2" data-split>Neighbourhoods <em>we know by heart.</em></h2></div>
+    <div class="hoods">
+      <a class="hood zoom img-reveal" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-n1%3C/text%3E%3C/svg%3E" alt="City skyline at sunset"><div><b>Downtown</b><span>142 homes · from $420k</span></div></a>
+      <a class="hood zoom img-reveal" style="--d:100ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-n2%3C/text%3E%3C/svg%3E" alt="Homes by the water"><div><b>The Waterfront</b><span>58 homes · from $690k</span></div></a>
+      <a class="hood zoom img-reveal" style="--d:200ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-n3%3C/text%3E%3C/svg%3E" alt="Tree-lined residential street"><div><b>Old Town</b><span>96 homes · from $510k</span></div></a>
+      <a class="hood zoom img-reveal" style="--d:300ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-n4%3C/text%3E%3C/svg%3E" alt="Modern condo building"><div><b>Riverside</b><span>121 homes · from $480k</span></div></a>
+      <a class="hood zoom img-reveal" style="--d:400ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-n5%3C/text%3E%3C/svg%3E" alt="Suburban houses with lawns"><div><b>Maple Heights</b><span>74 homes · from $560k</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="calc">
+  <div class="calc reveal">
+    <div class="l"><p class="eyebrow">Mortgage calculator</p><h2 class="display h2" style="margin-top:12px">What would you <em>pay each month?</em></h2>
+      <label>Home price <span class="val" id="pv">$650,000</span><input type="range" min="200000" max="1500000" step="10000" value="650000" id="price"></label>
+      <label>Down payment <span class="val" id="dv">20%</span><input type="range" min="5" max="50" value="20" id="down"></label>
+      <label>Interest rate <span class="val" id="rv">4.9%</span><input type="range" min="2" max="8" step="0.1" value="4.9" id="rate"></label>
+    </div>
+    <div class="r"><span style="color:#aeb9c6">Estimated monthly payment</span><div class="pay" id="pay">$2,760</div><span style="color:#aeb9c6">over 25 years · estimate only</span>
+      <svg class="ring" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#ffffff1f" stroke-width="5"/><circle id="arc" cx="21" cy="21" r="15.9" fill="none" stroke="#c39a5f" stroke-width="5" stroke-dasharray="80 20" stroke-dashoffset="25" stroke-linecap="round" style="transition:stroke-dasharray .6s"/></svg></div>
+  </div>
+</section>
+
+<section class="section" id="journal">
+  <div class="wrap">
+    <div class="head"><h2 class="display h2" data-split>From the <em>journal.</em></h2><a class="btn btn-ghost reveal" href="#">All articles</a></div>
+    <div class="posts">
+      <article class="post reveal"><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-p1%3C/text%3E%3C/svg%3E" alt="House keys on a table"></div><small>Buying</small><h3>First-time buyer? The 7 costs nobody mentions</h3></article>
+      <article class="post reveal" style="--d:120ms"><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-l2%3C/text%3E%3C/svg%3E" alt="Staged living room"></div><small>Selling</small><h3>Staging on a budget: what actually moves the price</h3></article>
+      <article class="post reveal" style="--d:240ms"><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Emeridian-n3%3C/text%3E%3C/svg%3E" alt="Quiet residential street"></div><small>Market report</small><h3>Riverside prices this autumn, street by street</h3></article>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap fgrid"><div><a class="logo" href="#"><i>M</i>Meridian</a><p style="margin-top:16px;max-width:300px">An independent brokerage helping families buy, sell and rent since 2008.</p></div><div><h4>Explore</h4><ul><li>Buy</li><li>Sell</li><li>Rent</li><li>Neighbourhoods</li></ul></div><div><h4>Company</h4><ul><li>Our agents</li><li>Journal</li><li>Careers</li></ul></div><div><h4>Visit</h4><ul><li>40 Market Square</li><li>(555) 010-4412</li><li>Mon to Sat, 9 to 6</li></ul></div></div></footer>
+<script src="/concepts/assets/concept.js" defer></script>
+<script>
+// Live mortgage estimate (25-year amortization).
+(() => {
+  const $ = (id) => document.getElementById(id)
+  const fmt = (v) => '$' + Math.round(v).toLocaleString('en-US')
+  const update = () => {
+    const price = +$('price').value, down = +$('down').value, rate = +$('rate').value / 100 / 12
+    const loan = price * (1 - down / 100), n = 300
+    const pay = loan * rate / (1 - Math.pow(1 + rate, -n))
+    $('pv').textContent = fmt(price); $('dv').textContent = down + '%'; $('rv').textContent = (+$('rate').value).toFixed(1) + '%'
+    $('pay').textContent = fmt(pay)
+    const share = Math.min(95, Math.max(20, 100 - down))
+    $('arc').setAttribute('stroke-dasharray', share + ' ' + (100 - share))
+  }
+  ;['price', 'down', 'rate'].forEach((id) => $(id).addEventListener('input', update))
+  update()
+})()
+</script>
+</body>
+</html>

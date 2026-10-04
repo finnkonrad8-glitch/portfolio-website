@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kora Wellness · Yoga and Pilates studio (concept)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concepts/assets/concept.css">
+<style>
+:root{--bg:#f3f1ea;--fg:#253126;--muted:#66705f;--line:rgba(37,49,38,.12);--surface:#fbfaf6;--accent:#b8643f;--accent-fg:#fff;--sage:#cdd8c4;--font-display:Fraunces,serif;--font-body:'DM Sans',sans-serif}
+.site-header{background:#f3f1eacc}
+.logo{font-family:var(--font-display);font-size:28px;font-weight:600;display:flex;align-items:center;gap:10px}
+.logo i{width:28px;height:28px;border-radius:50% 50% 50% 0;background:var(--accent);display:inline-block;transform:rotate(-45deg)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding:60px 0 100px}
+.hero h1{font-size:clamp(56px,6.4vw,96px);font-weight:500}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .lede{font-size:19px;color:var(--muted);max-width:500px;margin:26px 0 36px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:16px;margin-top:46px;font-size:14px;color:var(--muted)}
+.dots{display:flex}.dots span{width:38px;height:38px;border-radius:50%;border:3px solid var(--bg);margin-left:-10px;display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff}
+.dots span:first-child{margin-left:0}
+.arch{position:relative;height:640px}
+.arch .pic{position:absolute;inset:0;border-radius:320px 320px 28px 28px;overflow:hidden}
+.chip{position:absolute;background:var(--surface);border-radius:20px;padding:16px 18px;box-shadow:0 30px 60px -30px rgba(37,49,38,.45);display:flex;gap:14px;align-items:center;font-size:14px}
+.chip b{display:block;font-size:15px}
+.chip .ico{width:44px;height:44px;border-radius:14px;background:var(--sage);display:grid;place-items:center;font-size:20px}
+.c1{left:-60px;top:110px}.c2{right:-30px;bottom:90px}
+.sun{position:absolute;right:30px;top:-30px;width:120px;height:120px;border-radius:50%;border:1.5px dashed var(--accent);display:grid;place-items:center;text-align:center;font:600 12px/1.3 var(--font-body);letter-spacing:.12em;color:var(--accent);background:var(--bg)}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.type{background:var(--surface);border-radius:26px;padding:30px;border:1px solid var(--line)}
+.type .ico{width:56px;height:56px;border-radius:18px;background:var(--sage);display:grid;place-items:center;font-size:26px;transition:transform .6s var(--ease)}
+.type:hover .ico{transform:rotate(-10deg) scale(1.1)}
+.type h3{font-family:var(--font-display);font-size:26px;font-weight:500;margin-top:22px}
+.type p{color:var(--muted);font-size:15px;margin-top:6px}
+.type small{display:inline-block;margin-top:16px;font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--accent)}
+.title{font-size:clamp(42px,4.6vw,64px);font-weight:500}
+.title em{font-style:italic;color:var(--accent)}
+.sched{background:#253126;color:#f3f1ea;border-radius:40px;padding:70px;margin-top:20px}
+.sched .top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.days{display:flex;gap:8px;flex-wrap:wrap}
+.days button{border:1px solid #f3f1ea33;background:transparent;padding:12px 18px;border-radius:999px;cursor:pointer;font-weight:600;font-size:14px;transition:all .3s}
+.days button.on{background:var(--accent);border-color:var(--accent)}
+.rows{margin-top:40px}
+.row{display:grid;grid-template-columns:140px 1.4fr 1fr 1fr auto;align-items:center;gap:20px;padding:22px 0;border-top:1px solid #f3f1ea22}
+.row time{font-family:var(--font-display);font-size:30px}
+.row b{font-size:19px}.row span{color:#c7cfbf;font-size:15px}
+.lvl{display:inline-flex;gap:4px}.lvl i{width:22px;height:6px;border-radius:3px;background:#f3f1ea33}.lvl i.f{background:var(--accent)}
+.row .btn{padding:12px 20px;font-size:14px}
+.full{color:#c7cfbf;font-size:14px;font-weight:600}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:30px;padding:40px}
+.price.hot{background:var(--accent);color:#fff;transform:translateY(-14px)}
+.price h3{font-family:var(--font-display);font-size:26px;font-weight:500}
+.price .amt{font-family:var(--font-display);font-size:64px;line-height:1;margin:22px 0 6px}
+.price .amt small{font-size:18px;font-family:var(--font-body)}
+.price ul{list-style:none;margin:26px 0 30px;display:grid;gap:12px;font-size:15px}
+.price li::before{content:"✓";margin-right:10px;font-weight:700}
+.price .btn{width:100%}
+.price.hot .btn{background:#fff;color:var(--accent)}
+.gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:280px 280px;gap:18px;margin-top:50px}
+.gallery .g{border-radius:26px;overflow:hidden}.gallery .g1{grid-row:span 2}
+.quote{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;max-width:1000px;margin:0 auto}
+.quote .mark{font-family:var(--font-display);font-size:200px;line-height:.6;color:var(--accent)}
+.quote p{font-family:var(--font-display);font-size:40px;line-height:1.25}
+.quote cite{display:block;margin-top:20px;font-style:normal;color:var(--muted)}
+.cta{position:relative;border-radius:40px;background:var(--sage);padding:90px 70px;overflow:hidden;text-align:center}
+.cta h2{font-size:clamp(44px,5vw,76px);font-weight:500;position:relative}
+.cta h2 em{font-style:italic;color:var(--accent)}
+.cta p{color:var(--muted);margin:16px auto 34px;max-width:520px;position:relative}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55}
+.b1{width:340px;height:340px;background:#e9c9a8;left:-90px;top:-120px}.b2{width:260px;height:260px;background:#f3f1ea;right:-60px;bottom:-90px}
+footer{padding:70px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:30px}
+@media(max-width:900px){.hero,.types,.prices,.quote{grid-template-columns:1fr}.arch{height:480px}.c1{left:10px;top:40px}.c2{right:10px;bottom:30px}.sun{display:none}
+.sched{padding:36px 22px;border-radius:28px}.row{grid-template-columns:1fr auto;gap:6px}.row time{font-size:24px}.row .lvl,.row span.who{display:none}
+.price.hot{transform:none}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}.gallery .g1{grid-column:span 2;grid-row:auto}.quote .mark{font-size:120px}.quote p{font-size:28px}.cta{padding:60px 24px}}
+</style>
+</head>
+<body>
+{{bar}}
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="#"><i></i>Kora</a>
+    <nav class="nav-links"><a href="#classes">Classes</a><a href="#schedule">Schedule</a><a href="#pricing">Pricing</a><a href="#studio">Studio</a></nav>
+    <a class="btn btn-primary" href="#pricing">Book a class <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <div>
+    <p class="eyebrow reveal">Yoga · Pilates · Breathwork</p>
+    <h1 class="display" data-split style="margin-top:20px">Slow down. Breathe in. <em>Come home</em> to your body.</h1>
+    <p class="lede reveal" style="--d:500ms">Small classes in a light-filled studio, taught by people who remember your name. Beginners very welcome.</p>
+    <div class="actions reveal" style="--d:650ms"><a class="btn btn-primary" href="#pricing">Try 2 weeks for $39 <span class="arrow">→</span></a><a class="btn btn-ghost" href="#schedule">View schedule</a></div>
+    <div class="trust reveal" style="--d:800ms"><div class="dots"><span style="background:#b8643f">MA</span><span style="background:#7d8f6e">JS</span><span style="background:#253126">LK</span><span style="background:#c99a5b">+</span></div>Loved by 2,300 members · 4.9 average rating</div>
+  </div>
+  <div class="arch">
+    <div class="pic img-reveal"><img class="cover" src="{{img:kora-hero}}" alt="Calm yoga studio with mats in soft morning light"></div>
+    <div class="chip c1 float"><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#253126" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M6 11l6 2 6-2M8 20l4-7 4 7M5 20h14"/></svg></span><div><b>Vinyasa Flow</b>Today · 6:30 PM · 4 spots left</div></div>
+    <div class="chip c2 float" style="--d:1.5s"><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#253126" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><div><b>Heated studio</b>Infrared panels, 32°C</div></div>
+    <div class="sun spin-slow">BREATHE<br>· MOVE ·<br>REST</div>
+  </div>
+</section>
+
+<section class="section" id="classes" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="display title" data-split>Find the class that <em>fits your day.</em></h2>
+    <div class="types">
+      <article class="type lift reveal"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#253126" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div><h3>Vinyasa</h3><p>Flowing sequences that build heat and focus.</p><small>ALL LEVELS · 60 MIN</small></article>
+      <article class="type lift reveal" style="--d:100ms"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#253126" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c-4 0-8-2.5-8-7 2.5 0 5 1 8 4 3-3 5.5-4 8-4 0 4.5-4 7-8 7Z"/><path d="M12 17c-2-2-3-4.5-3-7 0-2 1.2-4 3-6 1.8 2 3 4 3 6 0 2.5-1 5-3 7Z"/></svg></div><h3>Reformer Pilates</h3><p>Strength and posture on our 12 reformers.</p><small>ALL LEVELS · 50 MIN</small></article>
+      <article class="type lift reveal" style="--d:200ms"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#253126" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></div><h3>Yin &amp; Restore</h3><p>Long holds and props to unwind deeply.</p><small>GENTLE · 75 MIN</small></article>
+      <article class="type lift reveal" style="--d:300ms"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#253126" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12.8 19.6A2 2 0 1 0 14 16H2M17.5 8a2.5 2.5 0 1 1 2 4H2M9.8 4.4A2 2 0 1 1 11 8H2"/></svg></div><h3>Breathwork</h3><p>Guided breathing for calm and better sleep.</p><small>GENTLE · 45 MIN</small></article>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="schedule">
+  <div class="sched reveal" data-tabs>
+    <div class="top"><div><p class="eyebrow" style="color:#e9c9a8">This week</p><h2 class="display title" style="margin-top:12px">Class schedule</h2></div>
+      <div class="days"><button class="on" data-tab="mon">Mon 10</button><button data-tab="tue">Tue 11</button><button data-tab="wed">Wed 12</button><button>Thu 13</button><button>Fri 14</button><button>Sat 15</button></div></div>
+    <div class="rows" data-panel="mon">
+      <div class="row"><time>6:30</time><div><b>Sunrise Vinyasa</b><br><span>with Maya</span></div><span class="who">Studio One</span><span class="lvl"><i class="f"></i><i class="f"></i><i></i></span><a class="btn btn-primary" href="#">Book</a></div>
+      <div class="row"><time>9:00</time><div><b>Reformer Foundations</b><br><span>with Jonah</span></div><span class="who">Reformer Room</span><span class="lvl"><i class="f"></i><i></i><i></i></span><a class="btn btn-primary" href="#">Book</a></div>
+      <div class="row"><time>12:15</time><div><b>Lunchtime Flow</b><br><span>with Lena</span></div><span class="who">Studio One</span><span class="lvl"><i class="f"></i><i class="f"></i><i></i></span><span class="full">Waitlist</span></div>
+      <div class="row"><time>18:30</time><div><b>Heated Vinyasa</b><br><span>with Maya</span></div><span class="who">Hot Studio</span><span class="lvl"><i class="f"></i><i class="f"></i><i class="f"></i></span><a class="btn btn-primary" href="#">Book</a></div>
+      <div class="row"><time>20:00</time><div><b>Yin &amp; Breath</b><br><span>with Kofi</span></div><span class="who">Studio Two</span><span class="lvl"><i class="f"></i><i></i><i></i></span><a class="btn btn-primary" href="#">Book</a></div>
+    </div>
+    <div class="rows" data-panel="tue" hidden><div class="row"><time>7:00</time><div><b>Power Pilates</b><br><span>with Jonah</span></div><span class="who">Reformer Room</span><span class="lvl"><i class="f"></i><i class="f"></i><i class="f"></i></span><a class="btn btn-primary" href="#">Book</a></div></div>
+    <div class="rows" data-panel="wed" hidden><div class="row"><time>6:30</time><div><b>Breath &amp; Mobility</b><br><span>with Kofi</span></div><span class="who">Studio Two</span><span class="lvl"><i class="f"></i><i></i><i></i></span><a class="btn btn-primary" href="#">Book</a></div></div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div style="text-align:center"><p class="eyebrow reveal">Memberships</p><h2 class="display title" data-split style="margin-top:14px">Simple pricing, <em>no contracts.</em></h2></div>
+    <div class="prices">
+      <div class="price lift reveal"><h3>Drop-in</h3><div class="amt">$24</div><span class="muted">per class</span><ul><li>Any class on the timetable</li><li>Mat and props included</li><li>Book 7 days ahead</li></ul><a class="btn btn-ghost" href="#">Buy a class</a></div>
+      <div class="price hot lift reveal" style="--d:120ms"><h3>Unlimited</h3><div class="amt">$139<small> / month</small></div><span>most popular</span><ul><li>Every class, every day</li><li>2 guest passes a month</li><li>Book 14 days ahead</li></ul><a class="btn" href="#">Start membership</a></div>
+      <div class="price lift reveal" style="--d:240ms"><h3>10-class pack</h3><div class="amt">$199</div><span class="muted">valid for 4 months</span><ul><li>Share with a friend</li><li>Mat and props included</li><li>Book 7 days ahead</li></ul><a class="btn btn-ghost" href="#">Buy a pack</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="studio" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="display title" data-split>A studio that feels like <em>exhaling.</em></h2>
+    <div class="gallery">
+      <div class="g g1 zoom img-reveal"><img class="cover" src="{{img:kora-g1}}" alt="Group yoga class in progress"></div>
+      <div class="g zoom img-reveal" style="--d:120ms"><img class="cover" src="{{img:kora-g2}}" alt="Pilates reformer machines in a bright room"></div>
+      <div class="g zoom img-reveal" style="--d:240ms"><img class="cover" src="{{img:kora-g3}}" alt="Candles and a singing bowl for meditation"></div>
+      <div class="g zoom img-reveal" style="--d:360ms"><img class="cover" src="{{img:kora-g4}}" alt="Rolled yoga mats and blocks on a shelf"></div>
+      <div class="g zoom img-reveal" style="--d:480ms"><img class="cover" src="{{img:kora-g5}}" alt="Herbal tea served in the studio lounge"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0"><div class="wrap quote reveal"><span class="mark">“</span><div><p>I came for my back and stayed for the people. Kora is the calmest hour of my week.</p><cite>Sample member review</cite></div></div></section>
+
+<section class="wrap"><div class="cta reveal"><span class="blob b1 float"></span><span class="blob b2 float" style="--d:2s"></span><h2 class="display">Your first class is <em>on us.</em></h2><p>New to Kora? Claim a free intro class and a studio tour, no card needed.</p><a class="btn btn-primary" href="#" style="position:relative">Claim my free class <span class="arrow">→</span></a></div></section>
+
+<footer><div class="wrap foot"><a class="logo" href="#"><i></i>Kora</a><span>12 Linden Row · Open daily 6 AM to 9 PM</span><span>hello@korawellness.example</span></div></footer>
+<script src="/concepts/assets/concept.js" defer></script>
+</body>
+</html>

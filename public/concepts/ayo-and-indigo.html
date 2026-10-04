@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayo &amp; Indigo · Hand-dyed clothing (concept)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/concepts/assets/concept.css">
+<style>
+:root{--bg:#f4f2ee;--fg:#141a3d;--muted:#5d6280;--line:rgba(20,26,61,.13);--surface:#fff;--accent:#2e3fa6;--accent-fg:#fff;--indigo:#1b2464;--font-display:Syne,sans-serif;--font-body:Inter,sans-serif}
+.ship{background:var(--indigo);color:#dfe3ff;font-size:13px;text-align:center;padding:10px;letter-spacing:.04em}
+.ship b{color:#fff}
+.site-header{background:#f4f2eeeb}
+.logo{font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:-.02em;text-transform:uppercase}
+.logo span{color:var(--accent)}
+.nav-links{text-transform:uppercase;font-size:13px;letter-spacing:.12em;font-weight:600}
+.icons{display:flex;gap:20px;font-size:14px;font-weight:600;align-items:center}
+.icons b{background:var(--fg);color:#fff;border-radius:11px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px;margin-left:6px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 16px;height:calc(100vh - 176px);min-height:560px}
+.hero .p{position:relative;border-radius:20px;overflow:hidden}
+.hero .p2 .over{position:absolute;inset:0;background:linear-gradient(0deg,#141a3dd9,transparent 60%)}
+.hero .copy{position:absolute;left:44px;right:44px;bottom:44px;color:#fff;z-index:2}
+.hero h1{font-family:var(--font-display);font-size:clamp(40px,3.9vw,66px);font-weight:800;line-height:.95;letter-spacing:-.04em;text-transform:uppercase}
+.hero .copy p{color:#dfe3ff;font-size:17px;margin:16px 0 26px;max-width:420px}
+.hero .copy .btn{background:#fff;color:var(--fg)}
+.tagv{position:absolute;left:24px;top:24px;z-index:2;background:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.price-tag{position:absolute;right:24px;top:50%;z-index:2;background:#fffffff2;border-radius:16px;padding:12px 14px;font-size:13px;box-shadow:0 20px 40px -20px #0006}
+.price-tag b{display:block;font-family:var(--font-display);font-size:18px}
+.ticker{padding:26px 0;border-bottom:1px solid var(--line);font-family:var(--font-display);font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.ticker span{padding:0 22px}.ticker span.d{color:var(--accent)}
+.h2{font-family:var(--font-display);font-weight:800;font-size:clamp(42px,5vw,80px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase}
+.h2 span{color:var(--accent)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat{position:relative;height:520px;border-radius:20px;overflow:hidden;color:#fff}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#141a3dcc,transparent 55%)}
+.cat div{position:absolute;z-index:2;left:26px;right:26px;bottom:24px;display:flex;justify-content:space-between;align-items:end}
+.cat b{font-family:var(--font-display);font-size:34px;font-weight:800;text-transform:uppercase;letter-spacing:-.02em}
+.cat .go{width:48px;height:48px;border-radius:50%;background:#fff;color:var(--fg);display:grid;place-items:center;font-size:20px;transition:transform .5s var(--ease)}
+.cat:hover .go{transform:rotate(-45deg)}
+.arrivals{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.item .ph{position:relative;aspect-ratio:3/4;border-radius:18px;overflow:hidden;background:#e4e2dc}
+.item .ph .new{position:absolute;left:12px;top:12px;z-index:2;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;padding:5px 10px;border-radius:999px}
+.sizes{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;display:flex;gap:6px;justify-content:center;transform:translateY(140%);transition:transform .5s var(--ease)}
+.item:hover .sizes{transform:none}
+.sizes button{flex:1;border:0;background:#fff;border-radius:10px;padding:10px 0;font-weight:700;font-size:13px;cursor:pointer}
+.sizes button:hover{background:var(--fg);color:#fff}
+.item h3{font-size:16px;font-weight:600;margin-top:14px}
+.item .row{display:flex;justify-content:space-between;color:var(--muted);font-size:14px;margin-top:4px}
+.item .row b{color:var(--fg)}
+.swatch{display:flex;gap:6px;margin-top:10px}.swatch i{width:16px;height:16px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.look{position:relative;height:640px;border-radius:24px;overflow:hidden;color:#fff;display:flex;align-items:center}
+.look::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#141a3de6,#141a3d33 60%,transparent)}
+.look .copy{position:relative;z-index:2;padding:0 70px;max-width:700px}
+.look p{color:#dfe3ff;font-size:18px;margin:20px 0 30px}
+.look .btn{background:#fff;color:var(--fg)}
+.craft{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.craft div{background:var(--surface);border-radius:20px;padding:30px;border:1px solid var(--line)}
+.craft b{font-family:var(--font-display);font-size:48px;font-weight:800;color:var(--accent);line-height:1}
+.craft h3{font-family:var(--font-display);font-size:22px;font-weight:700;margin-top:16px;text-transform:uppercase}
+.craft p{color:var(--muted);font-size:15px;margin-top:6px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rv{background:var(--indigo);color:#fff;border-radius:20px;padding:32px}
+.rv p{font-size:19px;line-height:1.45;margin-top:12px}
+.rv small{display:block;color:#aab2ee;margin-top:16px}
+.stars{color:#ffd166;letter-spacing:2px}
+.join{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;border-top:1px solid var(--line);padding:90px 0}.join .h2{font-size:clamp(36px,3.4vw,56px)}
+.join form{display:flex;background:#fff;border-radius:14px;padding:6px;border:1px solid var(--line)}
+.join input{flex:1;border:0;outline:0;padding:0 14px;font-size:16px}
+footer{background:var(--fg);color:#c2c7e8;padding:60px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;font-size:14px}
+@media(max-width:900px){.hero{grid-template-columns:1fr;height:auto}.hero .p{height:520px}.hero .p1{display:none}.hero .copy{left:22px;right:22px;bottom:26px}
+.cats,.revs,.join{grid-template-columns:1fr}.cat{height:380px}.arrivals,.craft{grid-template-columns:1fr 1fr}.look .copy{padding:0 24px}.head{flex-direction:column;align-items:flex-start}.ticker{font-size:16px}.sizes{transform:none}.price-tag{display:none}}
+</style>
+</head>
+<body>
+<div class="concept-bar" role="note"><span><b>Concept site</b> designed by TolexTech for Shopify. Sample content; photos from Pexels.</span><a href="/#websites">Back to the portfolio</a></div>
+<div class="ship"><b>Free shipping</b> on orders over $120 · Free returns for 30 days</div>
+<header class="site-header">
+  <div class="wrap nav">
+    <nav class="nav-links"><a href="#new">New in</a><a href="#shop">Shop</a><a href="#lookbook">Lookbook</a><a href="#craft">Our craft</a></nav>
+    <a class="logo" href="#">Ayo <span>&amp;</span> Indigo</a>
+    <div class="icons"><span>Search</span><span>Bag<b data-cart-count>0</b></span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="p p1 img-reveal"><img class="cover kenburns" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-hero1%3C/text%3E%3C/svg%3E" alt="Model wearing a hand-dyed indigo dress"><span class="tagv">Autumn 2026</span><span class="price-tag float"><b>Ọ̀ṣun Wrap Dress</b>$168 · in stock</span></div>
+  <div class="p p2 img-reveal" style="--d:150ms"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-hero2%3C/text%3E%3C/svg%3E" alt="Indigo-dyed fabric drying in the sun"><div class="over"></div>
+    <div class="copy"><h1 data-split>Dyed by hand. Made to be worn for years.</h1><p class="reveal" style="--d:700ms">Small-batch clothing in natural indigo, cut from organic cotton and linen and finished by artisans we know by name.</p><a class="btn reveal" style="--d:850ms" href="#new">Shop the collection <span class="arrow">→</span></a></div></div>
+</section>
+
+<div class="marquee ticker" style="--speed:32s" aria-hidden="true"><div class="track"><span>Natural indigo</span><span class="d">✺</span><span>Organic cotton</span><span class="d">✺</span><span>Hand-finished</span><span class="d">✺</span><span>Small batch</span><span class="d">✺</span><span>Natural indigo</span><span class="d">✺</span><span>Organic cotton</span><span class="d">✺</span><span>Hand-finished</span><span class="d">✺</span><span>Small batch</span><span class="d">✺</span></div></div>
+
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="head"><h2 class="h2" data-split>Shop by <span>category</span></h2></div>
+    <div class="cats">
+      <a class="cat zoom img-reveal" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-c1%3C/text%3E%3C/svg%3E" alt="Flowing dress on a model"><div><b>Dresses</b><span class="go">→</span></div></a>
+      <a class="cat zoom img-reveal" style="--d:120ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-c2%3C/text%3E%3C/svg%3E" alt="Folded linen shirts"><div><b>Shirts</b><span class="go">→</span></div></a>
+      <a class="cat zoom img-reveal" style="--d:240ms" href="#"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-c3%3C/text%3E%3C/svg%3E" alt="Patterned scarves and fabric"><div><b>Scarves</b><span class="go">→</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="new" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 class="h2" data-split>New <span>arrivals</span></h2><a class="btn btn-ghost reveal" href="#">View all</a></div>
+    <div class="arrivals">
+      <article class="item reveal"><div class="ph zoom"><span class="new">New</span><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-p1%3C/text%3E%3C/svg%3E" alt="Indigo wrap dress"><div class="sizes"><button data-add>S</button><button data-add>M</button><button data-add>L</button></div></div><h3>Ọ̀ṣun Wrap Dress</h3><div class="row"><span>Organic cotton</span><b>$168</b></div><div class="swatch"><i style="background:#1b2464"></i><i style="background:#6b7bd1"></i></div></article>
+      <article class="item reveal" style="--d:100ms"><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-p2%3C/text%3E%3C/svg%3E" alt="Relaxed linen shirt"><div class="sizes"><button data-add>S</button><button data-add>M</button><button data-add>L</button></div></div><h3>Lagoon Linen Shirt</h3><div class="row"><span>European linen</span><b>$96</b></div><div class="swatch"><i style="background:#f4f2ee"></i><i style="background:#2e3fa6"></i></div></article>
+      <article class="item reveal" style="--d:200ms"><div class="ph zoom"><span class="new">New</span><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-p3%3C/text%3E%3C/svg%3E" alt="Patterned indigo scarf"><div class="sizes"><button data-add>Add to bag</button></div></div><h3>Adire Silk Scarf</h3><div class="row"><span>Hand-dyed silk</span><b>$64</b></div><div class="swatch"><i style="background:#1b2464"></i></div></article>
+      <article class="item reveal" style="--d:300ms"><div class="ph zoom"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-p4%3C/text%3E%3C/svg%3E" alt="Wide-leg trousers"><div class="sizes"><button data-add>S</button><button data-add>M</button><button data-add>L</button></div></div><h3>Harmattan Trousers</h3><div class="row"><span>Cotton twill</span><b>$118</b></div><div class="swatch"><i style="background:#141a3d"></i><i style="background:#c9b99a"></i></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="lookbook"><div class="look img-reveal"><img class="cover" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221200%22%20height%3D%22800%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%239aa3ad%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235d6670%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%221200%22%20height%3D%22800%22%20fill%3D%22url%28%23g%29%22/%3E%3Ctext%20x%3D%22600%22%20y%3D%22410%22%20font-family%3D%22sans-serif%22%20font-size%3D%2244%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3Eayo-look%3C/text%3E%3C/svg%3E" alt="Editorial fashion photo in warm light" style="position:absolute;inset:0" data-parallax="-0.04"><div class="copy"><p class="eyebrow" style="color:#aab2ee">Lookbook</p><h2 class="h2" style="margin-top:14px;color:#fff">Golden <span style="color:#aab2ee">hour</span> in indigo</h2><p>Ten looks shot on the coast at dusk. Layer, wrap and repeat all season.</p><a class="btn" href="#">See the lookbook <span class="arrow">→</span></a></div></div></section>
+
+<section class="section" id="craft">
+  <div class="wrap">
+    <h2 class="h2" data-split>Four steps, <span>by hand</span></h2>
+    <div class="craft"><div class="reveal"><b>01</b><h3>Grow</h3><p>Indigo leaves harvested and fermented for natural dye vats.</p></div><div class="reveal" style="--d:100ms"><b>02</b><h3>Resist</h3><p>Patterns drawn in cassava paste or tied by hand before dyeing.</p></div><div class="reveal" style="--d:200ms"><b>03</b><h3>Dip</h3><p>Up to 12 dips to reach our signature deep blue.</p></div><div class="reveal" style="--d:300ms"><b>04</b><h3>Sew</h3><p>Cut and finished in small batches by our partner studio.</p></div></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="revs"><div class="rv lift reveal"><span class="stars">★★★★★</span><p>“The colour is even richer in person. I get stopped every time I wear the wrap dress.”</p><small>Sample review · Verified buyer</small></div><div class="rv lift reveal" style="--d:120ms"><span class="stars">★★★★★</span><p>“Soft linen, perfect fit and it's held up beautifully after a year of washing.”</p><small>Sample review · Verified buyer</small></div><div class="rv lift reveal" style="--d:240ms"><span class="stars">★★★★★</span><p>“You can feel the care in every piece. Packaging was gorgeous and plastic-free.”</p><small>Sample review · Verified buyer</small></div></div>
+  </div>
+</section>
+
+<section class="wrap join"><h2 class="h2" data-split>Get <span>10% off</span> your first piece</h2><form class="reveal"><input placeholder="Your email" aria-label="Email"><button class="btn btn-primary" type="submit">Join</button></form></section>
+
+<footer><div class="wrap foot"><span class="logo" style="color:#fff">Ayo <span>&amp;</span> Indigo</span><span>Shipping · Returns · Size guide · Care</span><span>@ayoandindigo</span></div></footer>
+<script src="/concepts/assets/concept.js" defer></script>
+</body>
+</html>
