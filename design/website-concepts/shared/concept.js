@@ -2,8 +2,11 @@
 ;(() => {
   const root = document.documentElement
   root.classList.add('js')
-  const poster = new URLSearchParams(location.search).has('poster')
+  const params = new URLSearchParams(location.search)
+  const poster = params.has('poster')
   if (poster) root.classList.add('poster')
+  // ?embed is the portfolio's card preview, which carries its own label.
+  if (params.has('embed')) root.classList.add('embed')
 
   // Split headlines into words that rise into place, keeping <em> etc.
   let n = 0

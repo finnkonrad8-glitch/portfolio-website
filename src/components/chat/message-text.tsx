@@ -15,7 +15,8 @@ type Href = { href: string; internal: boolean }
 
 function safeHref(raw: string): Href | null {
   if (raw.startsWith('/') && !raw.startsWith('//')) {
-    return { href: raw, internal: !raw.endsWith('.pdf') }
+    // Files (the résumé, the concept sites) open outside the app router.
+    return { href: raw, internal: !/\.(pdf|html)$/.test(raw) }
   }
   if (site.email && raw === `mailto:${site.email}`) {
     return { href: raw, internal: false }

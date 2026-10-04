@@ -88,6 +88,17 @@ select {
 }
 
 /* Concept disclosure bar */
+.embed .concept-bar {
+  display: none;
+}
+.embed {
+  scroll-behavior: auto;
+  scrollbar-width: none;
+}
+.embed::-webkit-scrollbar {
+  display: none;
+}
+
 .concept-bar {
   position: relative;
   z-index: 60;
