@@ -8,7 +8,6 @@ import {
   workingStyle,
 } from "../src/data/catalog"
 import { projects } from "../src/data/projects"
-import { publicReviews, reviewStats } from "../src/data/reviews"
 import { conceptHref, conceptSites } from "../src/data/websites"
 import { bio, site } from "../src/data/site"
 
@@ -40,20 +39,6 @@ function conceptSitesSection() {
         `- ${concept.name} (${concept.platform}, ${concept.niche}): ${concept.summary} Page: ${conceptHref(concept.slug)}`,
     )
     .join("\n")
-}
-
-function reviewsSection() {
-  const lines = publicReviews.map((review) => {
-    const words = review.quote
-      ? `"${review.quote}"`
-      : (review.summary ?? "No written comment.")
-    const when = review.date ? `, ${review.date}` : ""
-    return `- ${review.client} (${review.project}${when}): ${review.rating} out of 5. ${words}`
-  })
-  return [
-    `Average rating ${reviewStats.average.toFixed(1)} out of 5 across ${reviewStats.count} Fiverr reviews.`,
-    ...lines,
-  ].join("\n")
 }
 
 const RULES = `You are the AI assistant on the portfolio website of ${site.name} ("${site.nickname}"), who runs ${site.brand}. You help visitors understand what ${site.nickname} does, explore past work, and get in touch.
@@ -105,8 +90,6 @@ ${conceptSitesSection()}
 - Apps: concept designs with sample data (driver companion app, booking and client portal, field jobs board).
 - Email automation: concept designs with sample data (lead follow-up workflow, branded welcome series, outreach sequence dashboard).
 
-## Reviews
-${reviewsSection()}
 
 ## Contact
 - Contact form: /contact

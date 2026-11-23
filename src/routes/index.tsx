@@ -7,7 +7,6 @@ import { SkillsMarquee } from '@/components/home/skills-marquee'
 import { StatsBand } from '@/components/home/stats-band'
 import { WebsiteShowcase } from '@/components/home/website-showcase'
 import { PageShell } from '@/components/layout/page-shell'
-import { ReviewsSection } from '@/components/reviews/reviews-section'
 import { CtaBand } from '@/components/shared/cta-band'
 import { site } from '@/data/site'
 import { pageHead } from '@/lib/seo'
@@ -59,7 +58,6 @@ function HomePage() {
       <ProcessSteps />
       <WebsiteShowcase />
       <FeaturedProjects />
-      <ReviewsSection />
       <CtaBand />
     </PageShell>
   )
